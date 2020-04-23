@@ -1,0 +1,34 @@
+---
+
+- name: Add tower inventory
+  tower_inventory:
+    name: "Infrastructure"
+    description: "Infrastructure Servers"
+    organization: "Default"
+    state: present
+    tower_config_file: "files/tower_cli.cfg"
+
+
+- name: Add tower host
+  tower_host:
+    name: localhost
+    description: "Local Host Group"
+    inventory: "Infrastructure"
+    state: present
+    tower_config_file: "files/tower_cli.cfg"
+    variables:
+      example_var: 123
+
+# TODO: Add Satellite as a dynamic source
+#- name: Add tower inventory source
+#  tower_inventory_source:
+#    name: Inventory source
+#    description: My Inventory source
+#    inventory: My inventory
+#    credential: Devstack_credential
+#    source: openstack
+#    update_on_launch: true
+#    overwrite: true
+#    source_vars: '{ private: false }'
+#    state: present
+#    validate_certs: false
