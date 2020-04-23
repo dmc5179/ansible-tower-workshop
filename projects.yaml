@@ -10,7 +10,7 @@
     scm_type: git
     scm_url: 'https://github.com/dmc5179/ansible-workshop-compliance-scan.git'
     state: present
-    tower_config_file: "{{ lookup('file', 'files/tower_cli.cfg') }}"
+    tower_config_file: "files/tower_cli.cfg"
 
 - name: Add Tower Project for compliance remediation
   tower_project:
@@ -22,4 +22,4 @@
     scm_type: git
     scm_url: 'https://github.com/dmc5179/ansible-workshop-compliance-remediation.git'
     state: present
-    tower_config_file: "{{ lookup('file', 'files/tower_cli.cfg') }}"
+    tower_config_file: "files/tower_cli.cfg"

@@ -1,7 +1,8 @@
 ---
 - hosts: localhost
   connection: local
-  become: true
+  become: false
+  gather_facts: false
   tasks:
 
 #    - name: Create Groups

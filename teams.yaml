@@ -5,7 +5,7 @@
     description: Team for scanning devices for compliance
     organization: Default
     state: present
-    tower_config_file: "~/tower_cli.cfg"
+    tower_config_file: 'files/tower_cli.cfg'
 
 - name: Create Remediation tower team
   tower_team:
@@ -13,4 +13,4 @@
     description: Team for remediating devices for compliance
     organization: Default
     state: present
-    tower_config_file: "~/tower_cli.cfg"
+    tower_config_file: "files/tower_cli.cfg"

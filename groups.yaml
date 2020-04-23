@@ -5,4 +5,4 @@
     description: "Local Host Group"
     inventory: "Local Inventory"
     state: present
-    tower_config_file: "~/tower_cli.cfg"
+    tower_config_file: "files/tower_cli.cfg"
