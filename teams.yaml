@@ -1,0 +1,16 @@
+---
+- name: Create the Scanning tower team
+  tower_team:
+    name: Scanning
+    description: Team for scanning devices for compliance
+    organization: Default
+    state: present
+    tower_config_file: "~/tower_cli.cfg"
+
+- name: Create Remediation tower team
+  tower_team:
+    name: Remediation
+    description: Team for remediating devices for compliance
+    organization: Default
+    state: present
+    tower_config_file: "~/tower_cli.cfg"

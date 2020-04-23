@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+  tasks:
+
+#    - name: Create Groups
+#      include_tasks: groups.yaml
+
+    - name: Create Teams
+      include_tasks: teams.yaml
+
+    - name: Create Users
+      include_tasks: users.yaml

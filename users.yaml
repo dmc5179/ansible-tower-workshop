@@ -1,0 +1,36 @@
+---
+- name: Add tower user John
+  tower_user:
+    username: john
+    password: redhat1
+    email: john@example.org
+    first_name: John
+    last_name: Doe
+    state: present
+    tower_config_file: "{{ lookup('file', 'files/tower_cli.cfg') }}"
+
+- name: Add John to the member role of Scanning Team
+  tower_role:
+    user: john
+    target_team: "Scanning"
+    role: member
+    state: present
+    tower_config_file: "~/tower_cli.cfg"
+
+- name: Add tower user Paul
+  tower_user:
+    username: paul
+    password: redhat1
+    email: paul@example.org
+    first_name: Paul
+    last_name: Doe
+    state: present
+    tower_config_file: "{{ lookup('file', 'files/tower_cli.cfg') }}"
+
+- name: Add Paul to the member role of Remediation Team
+  tower_role:
+    user: paul
+    target_team: "Remediation"
+    role: member
+    state: present
+    tower_config_file: "~/tower_cli.cfg"
