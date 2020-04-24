@@ -17,6 +17,14 @@
     state: present
     tower_config_file: "files/tower_cli.cfg"
 
+- name: Add John to the Infrastructure Inventory
+  tower_role:
+    user: john
+    state: present
+    role: use
+    inventory: "Infrastructure"
+    tower_config_file: "files/tower_cli.cfg"
+
 - name: Add tower user Paul
   tower_user:
     username: paul
@@ -33,4 +41,12 @@
     target_team: "Remediation"
     role: member
     state: present
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add Paul to the Infrastructure Inventory
+  tower_role:
+    user: paul
+    state: present
+    role: use
+    inventory: "Infrastructure"
     tower_config_file: "files/tower_cli.cfg"
