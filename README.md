@@ -3,7 +3,7 @@ Ansible Tower Workshop with multiple teams and roles
 
 This workshop creates the following:
 
-- 2 users (john, paul)
+- 2 users (helpdesk1 and engineer1)
 - 2 teams (Scaning, Remediation)
 - 1 project (containing the security scanning playbook)
 - 2 templates (1 for the scanning team and 1 for the remediation team)
