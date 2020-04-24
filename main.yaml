@@ -5,8 +5,8 @@
   gather_facts: false
   tasks:
 
-#    - name: Create Groups
-#      include_tasks: groups.yaml
+    # - name: Create Groups
+    #  include_tasks: groups.yaml
 
     - name: Create Teams
       include_tasks: teams.yaml
@@ -16,3 +16,9 @@
 
     - name: Create Projects
       include_tasks: projects.yaml
+
+    - name: Create an inventory
+      include_tasks: add_inventory.yaml
+
+    - name: Create jobs
+      include_tasks: jobs.yaml

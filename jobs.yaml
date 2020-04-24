@@ -3,23 +3,28 @@
   tower_job_template:
     name: "Scanning"
     job_type: "check"
-    inventory: "Local"
-    project: "Demo"
+    inventory: "Infrastructure"
+    project: "RHEL_STIGS"
     playbook: "stig.yaml"
-    credential: "Local"
+    credential: "Demo Credential"
     state: "present"
     tower_config_file: "files/tower_cli.cfg"
     survey_enabled: false
+    become_enabled: true
+    description: "Job to check host compliance"
+#    validate_certs: "{{ ssl_enabled }}"
 
 - name: Create Remediation job in tower
   tower_job_template:
     name: "Remediation"
     job_type: "run"
-    inventory: "Local"
-    project: "Demo"
+    inventory: "Infrastructure"
+    project: "RHEL_STIGS"
     playbook: "stig.yaml"
-    credential: "Local"
+    credential: "Demo Credential"
     state: "present"
     tower_config_file: "files/tower_cli.cfg"
     survey_enabled: false
-
+    become_enabled: true
+    description: "Job to remediate hosts"
+#    validate_certs: "{{ ssl_enabled }}"

@@ -14,7 +14,7 @@
 
 - name: Add Tower Project for compliance remediation
   tower_project:
-    name: "Remediation"
+    name: "RHEL_STIGS"
     description: "Compliance Remediation Project"
     organization: "Default"
     scm_update_on_launch: true
