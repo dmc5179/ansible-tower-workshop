@@ -26,6 +26,46 @@
     inventory: "Infrastructure"
     tower_config_file: "files/tower_cli.cfg"
 
+- name: Add helpdesk1 to default org
+  tower_role:
+    user: helpdesk1
+    organization: 'Default'
+    state: present
+    role: member
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add helpdesk1 to grimlock credentials
+  tower_role:
+    user: helpdesk1
+    credential: "grimlock"
+    state: present
+    role: use
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add helpdesk1 to Infrastructure inventory
+  tower_role:
+    user: helpdesk1
+    inventory: "Infrastructure"
+    state: present
+    role: use
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add helpdesk1 to Scanning job template
+  tower_role:
+    user: helpdesk1
+    job_template: "Scanning"
+    state: present
+    role: execute
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add helpdesk1 to RHEL_STIGS project
+  tower_role:
+    user: helpdesk1
+    project: "RHEL_STIGS"
+    state: present
+    role: use
+    tower_config_file: "files/tower_cli.cfg"
+
 # Engineer user
 - name: Add tower user engineer1
   tower_user:
@@ -51,6 +91,46 @@
     state: present
     role: use
     inventory: "Infrastructure"
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add engineer1 to default org
+  tower_role:
+    user: engineer1
+    organization: 'Default'
+    state: present
+    role: member
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add engineer1 to grimlock credentials
+  tower_role:
+    user: engineer1
+    credential: "grimlock"
+    state: present
+    role: use
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add engineer1 to Infrastructure inventory
+  tower_role:
+    user: engineer1
+    inventory: "Infrastructure"
+    state: present
+    role: use
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add engineer1 to Remediation job template
+  tower_role:
+    user: engineer1
+    job_template: "Remediation"
+    state: present
+    role: execute
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add engineer1 to RHEL_STIGS  project
+  tower_role:
+    user: engineer1
+    project: "RHEL_STIGS"
+    state: present
+    role: use
     tower_config_file: "files/tower_cli.cfg"
 
 # Wordpress user
