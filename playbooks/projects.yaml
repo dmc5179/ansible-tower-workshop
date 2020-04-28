@@ -1,18 +1,5 @@
 ---
-
-#- name: Add Tower Project for compliance scanning
-#  tower_project:
-#    name: "Scanning"
-#    description: "Compliance Scanning Project"
-#    organization: "Default"
-#    scm_update_on_launch: true
-#    scm_update_cache_timeout: 60
-#    scm_type: git
-#    scm_url: 'https://github.com/dmc5179/ansible-workshop-compliance-scan.git'
-#    state: present
-#    tower_config_file: "files/tower_cli.cfg"
-
-- name: Add Tower Project for compliance remediation
+- name: Add Tower Project for compliance scanning and remediation
   tower_project:
     name: "RHEL_STIGS"
     description: "Compliance Remediation Project"

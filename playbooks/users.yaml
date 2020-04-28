@@ -79,3 +79,43 @@
     role: use
     inventory: "Wordpress_RHEL"
     tower_config_file: "files/tower_cli.cfg"
+
+- name: Add wordpress1 to default org
+  tower_role:
+    user: wordpress1
+    organization: 'Default'
+    state: present
+    role: member
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add wordpress1 to grimlock credentials
+  tower_role:
+    user: wordpress1
+    credential: "grimlock"
+    state: present
+    role: use
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add wordpress1 to wordpress inventory
+  tower_role:
+    user: wordpress1
+    inventory: "Wordpress_RHEL"
+    state: present
+    role: use
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add wordpress1 to RHEL job template
+  tower_role:
+    user: wordpress1
+    job_template: "Wordpress_on_RHEL"
+    state: present
+    role: execute
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add wordpress1 to Wordpress_RHEL project
+  tower_role:
+    user: wordpress1
+    project: "Wordpress_RHEL"
+    state: present
+    role: use
+    tower_config_file: "files/tower_cli.cfg"

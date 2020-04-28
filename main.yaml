@@ -14,11 +14,11 @@
     - name: Create an inventory
       include_tasks: playbooks/add_inventory.yaml
 
-    - name: Create Users
-      include_tasks: playbooks/users.yaml
-
     - name: Create Projects
       include_tasks: playbooks/projects.yaml
 
     - name: Create jobs
-      include_tasks: playbooks/jobs_templates.yaml
+      include_tasks: playbooks/job_templates.yaml
+
+    - name: Create Users
+      include_tasks: playbooks/users.yaml
