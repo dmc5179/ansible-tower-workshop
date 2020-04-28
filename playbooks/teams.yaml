@@ -14,3 +14,11 @@
     organization: Default
     state: present
     tower_config_file: "files/tower_cli.cfg"
+
+- name: Create Wordpress team
+  tower_team:
+    name: Wordpress
+    description: Team for installing Wordpress
+    organization: Default
+    state: present
+    tower_config_file: "files/tower_cli.cfg"

@@ -9,16 +9,16 @@
     #  include_tasks: groups.yaml
 
     - name: Create Teams
-      include_tasks: teams.yaml
+      include_tasks: playbooks/teams.yaml
 
     - name: Create an inventory
-      include_tasks: add_inventory.yaml
+      include_tasks: playbooks/add_inventory.yaml
 
     - name: Create Users
-      include_tasks: users.yaml
+      include_tasks: playbooks/users.yaml
 
     - name: Create Projects
-      include_tasks: projects.yaml
+      include_tasks: playbooks/projects.yaml
 
     - name: Create jobs
-      include_tasks: jobs.yaml
+      include_tasks: playbooks/jobs.yaml

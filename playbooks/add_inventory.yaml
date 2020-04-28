@@ -1,0 +1,56 @@
+---
+
+- name: Add Infrastructure tower inventory
+  tower_inventory:
+    name: "Infrastructure"
+    description: "Infrastructure Servers"
+    organization: "Default"
+    state: present
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add host to Infrastructure inventory
+  tower_host:
+    name: localhost
+    description: "Local Host Group"
+    inventory: "Infrastructure"
+    state: present
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add Wordpress on RHEL inventory
+  tower_inventory:
+    name: "Wordpress_RHEL"
+    description: "Wordpress RHEL Servers"
+    organization: "Default"
+    state: present
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add host to Wordpress on RHEL inventory
+  tower_host:
+    name: grimlock-wordpress.redhatgov.io
+    description: "Wordpress RHEL Server"
+    inventory: "Wordpress_RHEL"
+    state: present
+    tower_config_file: "files/tower_cli.cfg"
+
+#- name: Add Wordpress on OCP inventory
+#  tower_inventory:
+#    name: "Wordpress_OCP"
+#    description: "Wordpress on OCP Servers"
+#    organization: "Default"
+#    state: present
+#    tower_config_file: "files/tower_cli.cfg"
+
+
+# TODO: Add Satellite as a dynamic source
+#- name: Add tower inventory source
+#  tower_inventory_source:
+#    name: Inventory source
+#    description: My Inventory source
+#    inventory: My inventory
+#    credential: Devstack_credential
+#    source: openstack
+#    update_on_launch: true
+#    overwrite: true
+#    source_vars: '{ private: false }'
+#    state: present
+#    validate_certs: false

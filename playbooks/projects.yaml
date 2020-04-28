@@ -23,3 +23,28 @@
     scm_url: 'https://github.com/dmc5179/ansible-workshop-compliance-remediation.git'
     state: present
     tower_config_file: "files/tower_cli.cfg"
+
+- name: Add Tower Project for Wordpress on RHEL
+  tower_project:
+    name: "Wordpress_RHEL"
+    description: "Wordpress on RHEL Project"
+    organization: "Default"
+    scm_update_on_launch: true
+    scm_update_cache_timeout: 60
+    scm_type: git
+    scm_url: 'https://github.com/dmc5179/ansible-wordpress-rhel.git'
+    state: present
+    tower_config_file: "files/tower_cli.cfg"
+
+#- name: Add Tower Project for Wordpress on OCP
+#  tower_project:
+#    name: "Wordpress_OCP"
+#    description: "Wordpress on OCP Project"
+#    organization: "Default"
+#    scm_update_on_launch: true
+#    scm_update_cache_timeout: 60
+#    scm_type: git
+#    scm_url: 'https://github.com/dmc5179/ansible-wordpress-ocp.git'
+#    state: present
+#    tower_config_file: "files/tower_cli.cfg"
+
