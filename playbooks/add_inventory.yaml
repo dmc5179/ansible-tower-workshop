@@ -10,10 +10,13 @@
 
 - name: Add host to Infrastructure inventory
   tower_host:
-    name: localhost
+    name: grimlock-wordpress.redhatgov.io
     description: "Local Host Group"
     inventory: "Infrastructure"
     state: present
+    enabled: true
+    variables:
+      ansible_user: ec2-user
     tower_config_file: "files/tower_cli.cfg"
 
 - name: Add Wordpress on RHEL inventory
@@ -40,6 +43,16 @@
 #    state: present
 #    tower_config_file: "files/tower_cli.cfg"
 
+#- name: Add ec2 inventory source
+#  tower_inventory_source:
+#    name: AWS
+#    description: Hosts from AWS
+#    source: ec2
+#    inventory: AWS Wordpress Inventory
+#    instance_filters: 'grimlock,wordpress'
+#    update_on_launch: true
+#    state: present
+#    tower_config_file: "files/tower_cli.cfg"
 
 # TODO: Add Satellite as a dynamic source
 #- name: Add tower inventory source
