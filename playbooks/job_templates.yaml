@@ -9,7 +9,8 @@
     credential: "grimlock"
     state: "present"
     tower_config_file: "files/tower_cli.cfg"
-    survey_enabled: false
+    survey_enabled: true
+    survey_spec: "{{ lookup('file', 'snow_survey.json') }}"
     become_enabled: true
     description: "Job to check host compliance"
 
@@ -50,6 +51,7 @@
     playbook: "main.yaml"
     state: "present"
     tower_config_file: "files/tower_cli.cfg"
-    survey_enabled: false
+    survey_enabled: true
+    survey_spec: "{{ lookup('file', 'ocp_survey.json') }}"
     become_enabled: true
     description: "Job to install Wordpress on OpenShift"

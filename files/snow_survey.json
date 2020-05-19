@@ -1,0 +1,19 @@
+{
+  "name": "ServiceNow Password Survey",
+  "description": "ServiceNow Password Survey",
+  "spec": [
+    {
+      "question_name": "ServiceNow Password",
+      "question_description": "ServiceNow Password",
+      "required": true,
+      "type": "password",
+      "variable": "sn_password",
+      "min": 0,
+      "max": 32,
+      "default": "",
+      "choices": "",
+      "new_question": true
+    }
+  ]
+}
+
