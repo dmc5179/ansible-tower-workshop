@@ -5,8 +5,8 @@
   gather_facts: false
   tasks:
 
-    # - name: Create Groups
-    #  include_tasks: groups.yaml
+    - name: Create Credentials
+      include_tasks: playbooks/credentials.yaml
 
     - name: Create Teams
       include_tasks: playbooks/teams.yaml

@@ -12,7 +12,6 @@
     survey_enabled: false
     become_enabled: true
     description: "Job to check host compliance"
-#    validate_certs: "{{ ssl_enabled }}"
 
 - name: Create Remediation job template in tower
   tower_job_template:
@@ -27,7 +26,6 @@
     survey_enabled: false
     become_enabled: true
     description: "Job to remediate hosts"
-#    validate_certs: "{{ ssl_enabled }}"
 
 - name: Create Wordpress on RHEL job template in tower
   tower_job_template:
@@ -42,20 +40,16 @@
     survey_enabled: false
     become_enabled: true
     description: "Job to install Wordpress on RHEL"
-#    validate_certs: "{{ ssl_enabled }}"
 
-#- name: Create Wordpress on OCP job in tower
-#  tower_job_template:
-#    name: "Wordpress_on_OCP"
-#    job_type: "run"
-#    inventory: "Wordpress_OCP"
-#    project: "Wordpress_OCP"
-#    playbook: ""
-#    credential: "Demo Credential"
-#    state: "present"
-#    tower_config_file: "files/tower_cli.cfg"
-#    survey_enabled: false
-#    become_enabled: true
-#    description: "Job to install Wordpress on OpenShift"
-#    validate_certs: "{{ ssl_enabled }}"
-
+- name: Create Wordpress on OCP job in tower
+  tower_job_template:
+    name: "Wordpress_on_OCP"
+    job_type: "run"
+    inventory: "Infrastructure"
+    project: "Wordpress_OCP"
+    playbook: "main.yaml"
+    state: "present"
+    tower_config_file: "files/tower_cli.cfg"
+    survey_enabled: false
+    become_enabled: true
+    description: "Job to install Wordpress on OpenShift"

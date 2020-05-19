@@ -18,7 +18,7 @@
     state: present
     tower_config_file: "files/tower_cli.cfg"
 
-- name: Add helpdeks1 to the Infrastructure Inventory
+- name: Add helpdesk1 to the Infrastructure Inventory
   tower_role:
     user: helpdesk1
     state: present
@@ -38,14 +38,6 @@
   tower_role:
     user: helpdesk1
     credential: "grimlock"
-    state: present
-    role: use
-    tower_config_file: "files/tower_cli.cfg"
-
-- name: Add helpdesk1 to Infrastructure inventory
-  tower_role:
-    user: helpdesk1
-    inventory: "Infrastructure"
     state: present
     role: use
     tower_config_file: "files/tower_cli.cfg"
@@ -105,14 +97,6 @@
   tower_role:
     user: engineer1
     credential: "grimlock"
-    state: present
-    role: use
-    tower_config_file: "files/tower_cli.cfg"
-
-- name: Add engineer1 to Infrastructure inventory
-  tower_role:
-    user: engineer1
-    inventory: "Infrastructure"
     state: present
     role: use
     tower_config_file: "files/tower_cli.cfg"
