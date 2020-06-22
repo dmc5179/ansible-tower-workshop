@@ -19,4 +19,3 @@
     organization: "Default"
     state: absent
     tower_config_file: "files/tower_cli.cfg"
-

@@ -5,20 +5,20 @@
   gather_facts: false
   tasks:
 
-    - name: Create Users
+    - name: Remove Users
       include_tasks: playbooks/users_cleanup.yaml
 
-    - name: Create jobs
+    - name: Remove jobs
       include_tasks: playbooks/job_templates_cleanup.yaml
 
-    - name: Create Projects
+    - name: Remove Projects
       include_tasks: playbooks/projects_cleanup.yaml
 
-    - name: Create an inventory
+    - name: Remove inventory
       include_tasks: playbooks/add_inventory_cleanup.yaml
 
-    - name: Create Teams
+    - name: Remove Teams
       include_tasks: playbooks/teams_cleanup.yaml
 
-    - name: Create Credentials
+    - name: Remove Credentials
       include_tasks: playbooks/credentials_cleanup.yaml

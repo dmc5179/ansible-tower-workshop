@@ -2,27 +2,39 @@
 - name: Create Scanning job template in tower
   tower_job_template:
     name: "Scanning"
+    job_type: "check"
     project: "RHEL_STIGS"
+    playbook: "stig.yaml"
     state: "absent"
     tower_config_file: "files/tower_cli.cfg"
+  ignore_errors: true
 
 - name: Create Remediation job template in tower
   tower_job_template:
     name: "Remediation"
+    job_type: "run"
     project: "RHEL_STIGS"
+    playbook: "stig.yaml"
     state: "absent"
     tower_config_file: "files/tower_cli.cfg"
+  ignore_errors: true
 
 - name: Create Wordpress on RHEL job template in tower
   tower_job_template:
     name: "Wordpress_on_RHEL"
+    job_type: "run"
     project: "Wordpress_RHEL"
+    playbook: "main.yml"
     state: "absent"
     tower_config_file: "files/tower_cli.cfg"
+  ignore_errors: true
 
 - name: Create Wordpress on OCP job in tower
   tower_job_template:
     name: "Wordpress_on_OCP"
+    job_type: "run"
     project: "Wordpress_OCP"
+    playbook: "main.yaml"
     state: "absent"
     tower_config_file: "files/tower_cli.cfg"
+  ignore_errors: true
