@@ -8,10 +8,10 @@
     - name: Create Users
       include_tasks: playbooks/users_cleanup.yaml
 
-# TODO: Cleanup tasks below not created yet
+    - name: Create jobs
+      include_tasks: playbooks/job_templates_cleanup.yaml
 
-#    - name: Create jobs
-#      include_tasks: playbooks/job_templates_cleanup.yaml
+# TODO: Cleanup tasks below not created yet
 
 #    - name: Create Projects
 #      include_tasks: playbooks/projects_cleanup.yaml
