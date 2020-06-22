@@ -1,3 +1,4 @@
 *.swp
 files/tower_cli.cfg
 playbooks/vars/change_request_vars.yml
+ansible.log
