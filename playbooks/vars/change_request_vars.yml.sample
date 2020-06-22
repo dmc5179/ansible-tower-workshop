@@ -1,0 +1,14 @@
+---
+
+# Service Now
+
+# snow_record variables
+# These come from setting up a dev instance with Service Now Online
+sn_username: 'admin'
+sn_password: 'PASSWORD'
+sn_instance: 'dev#####'
+
+# data variables
+
+sn_severity: 2
+sn_priority: 2
