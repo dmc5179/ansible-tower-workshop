@@ -1,19 +1,19 @@
 ---
-- name: Add Tower Project for compliance scanning and remediation
+- name: Remove Tower Project for compliance scanning and remediation
   tower_project:
     name: "RHEL_STIGS"
     organization: "Default"
     state: absent
     tower_config_file: "files/tower_cli.cfg"
 
-- name: Add Tower Project for Wordpress on RHEL
+- name: Remove Tower Project for Wordpress on RHEL
   tower_project:
     name: "Wordpress_RHEL"
     organization: "Default"
     state: absent
     tower_config_file: "files/tower_cli.cfg"
 
-- name: Add Tower Project for Wordpress on OCP
+- name: Remove Tower Project for Wordpress on OCP
   tower_project:
     name: "Wordpress_OCP"
     organization: "Default"
