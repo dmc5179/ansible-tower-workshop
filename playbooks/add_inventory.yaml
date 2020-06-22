@@ -7,7 +7,9 @@
     organization: "Default"
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
+# TODO: Don't have permissions to do this?
 - name: Add host to Infrastructure inventory
   tower_host:
     name: grimlock-wordpress.redhatgov.io
@@ -26,14 +28,17 @@
     organization: "Default"
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
-- name: Add host to Wordpress on RHEL inventory
-  tower_host:
-    name: grimlock-wordpress.redhatgov.io
-    description: "Wordpress RHEL Server"
-    inventory: "Wordpress_RHEL"
-    state: present
-    tower_config_file: "files/tower_cli.cfg"
+# TODO: Don't have permissions to do this?
+#- name: Add host to Wordpress on RHEL inventory
+#  tower_host:
+#    name: grimlock-wordpress.redhatgov.io
+#    description: "Wordpress RHEL Server"
+#    inventory: "Wordpress_RHEL"
+#    state: present
+#    tower_config_file: "files/tower_cli.cfg"
+#  delegate_to: localhost
 
 #- name: Add Wordpress on OCP inventory
 #  tower_inventory:
@@ -50,6 +55,7 @@
     organization: "Default"
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add ec2 inventory source
   tower_inventory_source:
@@ -58,11 +64,13 @@
     source: ec2
     credential: amz
     inventory: AWS_Wordpress_Inventory
-    instance_filters: 'Name=tag:Name,Values=grimlock-wordpress'
+#    instance_filters: 'Name=tag:Name,Values=grimlock-wordpress'
+    instance_filters: 'tag:Name=grimlock-wordpress'
     update_on_launch: true
     overwrite: true
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 # TODO: Add Satellite as a dynamic source
 #- name: Add tower inventory source

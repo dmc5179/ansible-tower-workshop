@@ -13,6 +13,7 @@
     survey_spec: "{{ lookup('file', 'snow_survey.json') }}"
     become_enabled: true
     description: "Job to check host compliance"
+  delegate_to: localhost
 
 - name: Create Remediation job template in tower
   tower_job_template:
@@ -27,6 +28,7 @@
     survey_enabled: false
     become_enabled: true
     description: "Job to remediate hosts"
+  delegate_to: localhost
 
 - name: Create Wordpress on RHEL job template in tower
   tower_job_template:
@@ -41,6 +43,7 @@
     survey_enabled: false
     become_enabled: true
     description: "Job to install Wordpress on RHEL"
+  delegate_to: localhost
 
 - name: Create Wordpress on OCP job in tower
   tower_job_template:
@@ -55,3 +58,4 @@
     survey_spec: "{{ lookup('file', 'ocp_survey.json') }}"
     become_enabled: true
     description: "Job to install Wordpress on OpenShift"
+  delegate_to: localhost

@@ -6,6 +6,7 @@
     organization: Default
     state: present
     tower_config_file: 'files/tower_cli.cfg'
+  delegate_to: localhost
 
 - name: Create Remediation tower team
   tower_team:
@@ -14,6 +15,7 @@
     organization: Default
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Create Wordpress team
   tower_team:
@@ -22,3 +24,4 @@
     organization: Default
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost

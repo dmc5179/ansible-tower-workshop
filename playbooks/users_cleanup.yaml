@@ -124,6 +124,7 @@
     inventory: "Wordpress_RHEL"
     tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
+  delegate_to: localhost
 
 - name: Remove wordpress1 from default org
   tower_role:
@@ -133,6 +134,7 @@
     role: member
     tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
+  delegate_to: localhost
 
 - name: Remove wordpress1 from grimlock credentials
   tower_role:
@@ -142,6 +144,7 @@
     role: use
     tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
+  delegate_to: localhost
 
 - name: Remove wordpress1 from wordpress inventory
   tower_role:
@@ -151,6 +154,7 @@
     role: use
     tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
+  delegate_to: localhost
 
 - name: Remove wordpress1 from RHEL job template
   tower_role:
@@ -160,6 +164,7 @@
     role: execute
     tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
+  delegate_to: localhost
 
 - name: Remove wordpress1 from Wordpress_RHEL project
   tower_role:
@@ -169,6 +174,7 @@
     role: use
     tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
+  delegate_to: localhost
 
 # Helpdesk user
 - name: Remove tower user helpdesk1
@@ -178,6 +184,7 @@
     state: absent
     tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
+  delegate_to: localhost
 
 # Engineer user
 - name: Remove tower user engineer1
@@ -187,6 +194,7 @@
     state: absent
     tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
+  delegate_to: localhost
 
 # Wordpress user
 - name: Remove tower user wordpress1
@@ -196,3 +204,4 @@
     state: absent
     tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
+  delegate_to: localhost

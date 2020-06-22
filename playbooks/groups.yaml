@@ -6,3 +6,4 @@
     inventory: "Local Inventory"
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost

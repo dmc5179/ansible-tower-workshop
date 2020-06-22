@@ -9,6 +9,7 @@
     last_name: Desk
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add helpdesk1 to the member role of Scanning Team
   tower_role:
@@ -17,6 +18,7 @@
     role: member
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add helpdesk1 to the Infrastructure Inventory
   tower_role:
@@ -25,6 +27,7 @@
     role: use
     inventory: "Infrastructure"
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add helpdesk1 to default org
   tower_role:
@@ -33,6 +36,7 @@
     state: present
     role: member
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add helpdesk1 to grimlock credentials
   tower_role:
@@ -41,6 +45,7 @@
     state: present
     role: use
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add helpdesk1 to Scanning job template
   tower_role:
@@ -49,6 +54,7 @@
     state: present
     role: execute
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add helpdesk1 to RHEL_STIGS project
   tower_role:
@@ -57,6 +63,7 @@
     state: present
     role: use
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 # Engineer user
 - name: Add tower user engineer1
@@ -68,6 +75,7 @@
     last_name: Doe
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add engineer1 to the member role of Remediation Team
   tower_role:
@@ -76,6 +84,7 @@
     role: member
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add engineer1 to the Infrastructure Inventory
   tower_role:
@@ -84,6 +93,7 @@
     role: use
     inventory: "Infrastructure"
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add engineer1 to default org
   tower_role:
@@ -92,6 +102,7 @@
     state: present
     role: member
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add engineer1 to grimlock credentials
   tower_role:
@@ -100,6 +111,7 @@
     state: present
     role: use
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add engineer1 to Remediation job template
   tower_role:
@@ -108,6 +120,7 @@
     state: present
     role: execute
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add engineer1 to RHEL_STIGS  project
   tower_role:
@@ -116,6 +129,7 @@
     state: present
     role: use
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 # Wordpress user
 - name: Add tower user wordpress1
@@ -127,6 +141,7 @@
     last_name: Press
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add wordpress1 to the member role of Wordpress Team
   tower_role:
@@ -135,6 +150,7 @@
     role: member
     state: present
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add wordpress1 to the Infrastructure Inventory
   tower_role:
@@ -143,6 +159,7 @@
     role: use
     inventory: "Wordpress_RHEL"
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add wordpress1 to default org
   tower_role:
@@ -151,6 +168,7 @@
     state: present
     role: member
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add wordpress1 to grimlock credentials
   tower_role:
@@ -159,6 +177,7 @@
     state: present
     role: use
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add wordpress1 to wordpress inventory
   tower_role:
@@ -167,6 +186,7 @@
     state: present
     role: use
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add wordpress1 to RHEL job template
   tower_role:
@@ -175,6 +195,7 @@
     state: present
     role: execute
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
 - name: Add wordpress1 to Wordpress_RHEL project
   tower_role:
@@ -183,3 +204,4 @@
     state: present
     role: use
     tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
