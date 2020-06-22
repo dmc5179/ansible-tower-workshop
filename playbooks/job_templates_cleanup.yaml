@@ -1,0 +1,28 @@
+---
+- name: Create Scanning job template in tower
+  tower_job_template:
+    name: "Scanning"
+    project: "RHEL_STIGS"
+    state: "absent"
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Create Remediation job template in tower
+  tower_job_template:
+    name: "Remediation"
+    project: "RHEL_STIGS"
+    state: "absent"
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Create Wordpress on RHEL job template in tower
+  tower_job_template:
+    name: "Wordpress_on_RHEL"
+    project: "Wordpress_RHEL"
+    state: "absent"
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Create Wordpress on OCP job in tower
+  tower_job_template:
+    name: "Wordpress_on_OCP"
+    project: "Wordpress_OCP"
+    state: "absent"
+    tower_config_file: "files/tower_cli.cfg"

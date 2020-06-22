@@ -1,0 +1,26 @@
+---
+- hosts: localhost
+  connection: local
+  become: false
+  gather_facts: false
+  tasks:
+
+    - name: Create Users
+      include_tasks: playbooks/users_cleanup.yaml
+
+# TODO: Cleanup tasks below not created yet
+
+#    - name: Create jobs
+#      include_tasks: playbooks/job_templates_cleanup.yaml
+
+#    - name: Create Projects
+#      include_tasks: playbooks/projects_cleanup.yaml
+
+#    - name: Create an inventory
+#      include_tasks: playbooks/add_inventory_cleanup.yaml
+
+#    - name: Create Teams
+#      include_tasks: playbooks/teams_cleanup.yaml
+
+#    - name: Create Credentials
+#      include_tasks: playbooks/credentials_cleanup.yaml
