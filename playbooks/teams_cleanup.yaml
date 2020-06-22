@@ -1,0 +1,21 @@
+---
+- name: Create the Scanning tower team
+  tower_team:
+    name: Scanning
+    organization: Default
+    state: absent
+    tower_config_file: 'files/tower_cli.cfg'
+
+- name: Create Remediation tower team
+  tower_team:
+    name: Remediation
+    organization: Default
+    state: absent
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Create Wordpress team
+  tower_team:
+    name: Wordpress
+    organization: Default
+    state: absent
+    tower_config_file: "files/tower_cli.cfg"

@@ -11,16 +11,14 @@
     - name: Create jobs
       include_tasks: playbooks/job_templates_cleanup.yaml
 
-# TODO: Cleanup tasks below not created yet
+    - name: Create Projects
+      include_tasks: playbooks/projects_cleanup.yaml
 
-#    - name: Create Projects
-#      include_tasks: playbooks/projects_cleanup.yaml
+    - name: Create an inventory
+      include_tasks: playbooks/add_inventory_cleanup.yaml
 
-#    - name: Create an inventory
-#      include_tasks: playbooks/add_inventory_cleanup.yaml
+    - name: Create Teams
+      include_tasks: playbooks/teams_cleanup.yaml
 
-#    - name: Create Teams
-#      include_tasks: playbooks/teams_cleanup.yaml
-
-#    - name: Create Credentials
-#      include_tasks: playbooks/credentials_cleanup.yaml
+    - name: Create Credentials
+      include_tasks: playbooks/credentials_cleanup.yaml

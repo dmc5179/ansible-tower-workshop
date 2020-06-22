@@ -1,0 +1,33 @@
+---
+
+- name: Add Infrastructure tower inventory
+  tower_inventory:
+    name: "Infrastructure"
+    description: "Infrastructure Servers"
+    organization: "Default"
+    state: absent
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add Wordpress on RHEL inventory
+  tower_inventory:
+    name: "Wordpress_RHEL"
+    description: "Wordpress RHEL Servers"
+    organization: "Default"
+    state: absent
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add Wordpress on OCP inventory
+  tower_inventory:
+    name: "Wordpress_OCP"
+    description: "Wordpress on OCP Servers"
+    organization: "Default"
+    state: absent
+    tower_config_file: "files/tower_cli.cfg"
+
+- name: Add Amazon Inventory
+  tower_inventory:
+    name: 'AWS_Wordpress_Inventory'
+    description: "Amazon Instances"
+    organization: "Default"
+    state: absent
+    tower_config_file: "files/tower_cli.cfg"
