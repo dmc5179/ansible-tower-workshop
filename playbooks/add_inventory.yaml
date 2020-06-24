@@ -31,22 +31,22 @@
   delegate_to: localhost
 
 # TODO: Don't have permissions to do this?
-#- name: Add host to Wordpress on RHEL inventory
-#  tower_host:
-#    name: grimlock-wordpress.redhatgov.io
-#    description: "Wordpress RHEL Server"
-#    inventory: "Wordpress_RHEL"
-#    state: present
-#    tower_config_file: "files/tower_cli.cfg"
-#  delegate_to: localhost
+- name: Add host to Wordpress on RHEL inventory
+  tower_host:
+    name: grimlock-wordpress.redhatgov.io
+    description: "Wordpress RHEL Server"
+    inventory: "Wordpress_RHEL"
+    state: present
+    tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
 
-#- name: Add Wordpress on OCP inventory
-#  tower_inventory:
-#    name: "Wordpress_OCP"
-#    description: "Wordpress on OCP Servers"
-#    organization: "Default"
-#    state: present
-#    tower_config_file: "files/tower_cli.cfg"
+- name: Add Wordpress on OCP inventory
+  tower_inventory:
+    name: "Wordpress_OCP"
+    description: "Wordpress on OCP Servers"
+    organization: "Default"
+    state: present
+    tower_config_file: "files/tower_cli.cfg"
 
 - name: Add Amazon Inventory
   tower_inventory:

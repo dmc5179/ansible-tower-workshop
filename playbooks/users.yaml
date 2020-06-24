@@ -86,6 +86,15 @@
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
 
+- name: Add engineer1 to the member role of Scanning Team
+  tower_role:
+    user: engineer1
+    target_team: "Scanning"
+    role: member
+    state: present
+    tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
+
 - name: Add engineer1 to the Infrastructure Inventory
   tower_role:
     user: engineer1
@@ -117,6 +126,15 @@
   tower_role:
     user: engineer1
     job_template: "Remediation"
+    state: present
+    role: execute
+    tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
+
+- name: Add engineer1 to Scanning job template
+  tower_role:
+    user: engineer1
+    job_template: "Scanning"
     state: present
     role: execute
     tower_config_file: "files/tower_cli.cfg"
@@ -197,6 +215,15 @@
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
 
+- name: Add wordpress1 to OCP job template
+  tower_role:
+    user: wordpress1
+    job_template: "Wordpress_on_OCP"
+    state: present
+    role: execute
+    tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
+
 - name: Add wordpress1 to Wordpress_RHEL project
   tower_role:
     user: wordpress1
@@ -205,3 +232,13 @@
     role: use
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
+
+- name: Add wordpress1 to Wordpress_OCP project
+  tower_role:
+    user: wordpress1
+    project: "Wordpress_OCP"
+    state: present
+    role: use
+    tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
+
