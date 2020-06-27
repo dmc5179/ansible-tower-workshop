@@ -7,18 +7,30 @@
 
     - name: Create Credentials
       include_tasks: playbooks/credentials.yaml
+      vars:
+        action: present
 
     - name: Create Teams
       include_tasks: playbooks/teams.yaml
+      vars: 
+        action: present
 
     - name: Create an inventory
       include_tasks: playbooks/add_inventory.yaml
+      vars: 
+        action: present
 
     - name: Create Projects
       include_tasks: playbooks/projects.yaml
+      vars: 
+        action: present
 
     - name: Create jobs
       include_tasks: playbooks/job_templates.yaml
+      vars: 
+        action: present
 
     - name: Create Users
       include_tasks: playbooks/users.yaml
+      vars: 
+        action: present
