@@ -34,3 +34,7 @@
       include_tasks: playbooks/users.yaml
       vars: 
         action: present
+
+    - name: Configure Splunk Logging Aggregator
+      include_tasks: playbooks/splunk.yaml
+      when: ( splunk.enabled | bool )

@@ -1,0 +1,12 @@
+---
+
+- name: Configure Splunk Logging Aggregator
+  uri:
+    url: https://{{ tower.host }}/api/v2/settings/logging
+    user: {{ tower.username }}
+    password: {{ tower.password }}
+    method: POST
+    body: "{{ lookup('template','tower_logging.json.j2') }}"
+    force_basic_auth: yes
+    status_code: 201
+    body_format: json
