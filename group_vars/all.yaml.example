@@ -1,0 +1,27 @@
+---
+
+tower:
+  use_token: False
+  description_on: False
+  password: PASSWORD
+  verify_ssl: true
+  format: human
+  insecure: true
+  oauth_token: 
+  verbose: False
+  color: True
+  username: USERNAME
+  host: tower.hostname.com
+  certificate: 
+
+ssl_enabled: false
+host_credentials: 'ssh_public_key_file'
+
+splunk:
+  enabled: true
+  host: splunk.example.com
+  hec:
+    enabled: true
+    ssl: false
+    token: abcd-1234-efgh-5678
+    port: 8088
