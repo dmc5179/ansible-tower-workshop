@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  connection: local
+  become: false
+  gather_facts: false
+  tasks:
+
+    - name: Configure Splunk Logging Aggregator
+      include_tasks: playbooks/splunk.yaml
+      when: ( splunk.enabled | bool )
