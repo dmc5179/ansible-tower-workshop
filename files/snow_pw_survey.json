@@ -1,6 +1,6 @@
 {
-  "name": "ServiceNow Password Survey",
-  "description": "ServiceNow Password Survey",
+  "name": "ServiceNow Survey",
+  "description": "ServiceNow Survey",
   "spec": [
     {
       "question_name": "ServiceNow Password",
@@ -13,7 +13,18 @@
       "default": "",
       "choices": "",
       "new_question": true
+    },
+    {
+      "question_name": "ServiceNow Instance ID",
+      "question_description": "ServiceNow Instance ID",
+      "required": true,
+      "type": "text",
+      "variable": "sn_instance",
+      "min": 4,
+      "max": 32,
+      "default": "",
+      "choices": "",
+      "new_question": true
     }
   ]
 }
-
