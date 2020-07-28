@@ -6,35 +6,49 @@
   tasks:
 
     - name: Create Credentials
-      include_tasks: playbooks/credentials.yaml
+      import_tasks: playbooks/credentials.yaml
       vars:
         action: present
+      tags:
+        - credentials
 
     - name: Create Teams
-      include_tasks: playbooks/teams.yaml
+      import_tasks: playbooks/teams.yaml
       vars: 
         action: present
+      tags:
+        - teams
 
     - name: Create an inventory
-      include_tasks: playbooks/add_inventory.yaml
+      import_tasks: playbooks/add_inventory.yaml
       vars: 
         action: present
+      tags:
+        - inventory
 
     - name: Create Projects
-      include_tasks: playbooks/projects.yaml
+      import_tasks: playbooks/projects.yaml
       vars: 
         action: present
+      tags:
+        - projects
 
     - name: Create jobs
-      include_tasks: playbooks/job_templates.yaml
+      import_tasks: playbooks/job_templates.yaml
       vars: 
         action: present
+      tags:
+        - jobs
 
     - name: Create Users
-      include_tasks: playbooks/users.yaml
+      import_tasks: playbooks/users.yaml
       vars: 
         action: present
+      tags:
+        - users
 
     - name: Configure Splunk Logging Aggregator
-      include_tasks: playbooks/splunk.yaml
+      import_tasks: playbooks/splunk.yaml
       when: ( splunk.enabled | bool )
+      tags:
+        - splunk
