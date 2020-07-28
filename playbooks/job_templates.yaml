@@ -10,7 +10,7 @@
     state: "present"
     tower_config_file: "files/tower_cli.cfg"
     survey_enabled: true
-    survey_spec: "{{ lookup('file', 'snow_pw_survey.json') }}"
+    survey_spec: "{{ lookup('file', 'snow_survey.json') }}"
     become_enabled: true
     description: "Job to check host compliance"
   delegate_to: localhost
@@ -26,7 +26,7 @@
     state: "present"
     tower_config_file: "files/tower_cli.cfg"
     survey_enabled: true
-    survey_spec: "{{ lookup('file', 'snow_pw_survey.json') }}"
+    survey_spec: "{{ lookup('file', 'snow_survey.json') }}"
     become_enabled: true
     description: "Job to check host compliance"
   delegate_to: localhost
