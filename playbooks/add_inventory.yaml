@@ -9,7 +9,6 @@
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
 
-# TODO: Don't have permissions to do this?
 - name: Add host to Infrastructure inventory
   tower_host:
     name: grimlock-wordpress.redhatgov.io
@@ -30,7 +29,6 @@
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
 
-# TODO: Don't have permissions to do this?
 - name: Add host to Wordpress on RHEL inventory
   tower_host:
     name: grimlock-wordpress.redhatgov.io
@@ -67,7 +65,6 @@
     source: ec2
     credential: amz
     inventory: 'AWS_Dynamic'
-#    instance_filters: 'Name=tag:Name,Values=grimlock-wordpress'
     instance_filters: 'tag:Name=grimlock-wordpress'
     source_regions: 'us-east-1'
     source_vars: "{ ansible_user: ec2-user, ansible_python_interpreter: /usr/bin/python3 }"
@@ -77,16 +74,14 @@
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
 
-# TODO: Add Satellite as a dynamic source
-#- name: Add tower inventory source
-#  tower_inventory_source:
-#    name: Inventory source
-#    description: My Inventory source
-#    inventory: My inventory
-#    credential: Devstack_credential
-#    source: openstack
-#    update_on_launch: true
-#    overwrite: true
-#    source_vars: '{ private: false }'
-#    state: present
-#    validate_certs: false
+- name: Add tower inventory source
+  tower_inventory_source:
+    name: Satellite
+    description: Hosts from Satellite
+    inventory: 'Satellite_Dynamic'
+    credential: satellite_credential
+    source: satellite6
+    update_on_launch: true
+    overwrite: true
+    state: present
+    validate_certs: false

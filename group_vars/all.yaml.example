@@ -17,6 +17,10 @@ tower:
 ssl_enabled: false
 host_credentials: 'ssh_public_key_file'
 
+satellite_server: 'https://satellite.example.com'
+satellite_username: 'username'
+satellite_password: 'password'
+
 splunk:
   enabled: true
   host: splunk.example.com
