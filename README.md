@@ -1,6 +1,8 @@
 # ansible-tower-workshop
 Ansible Tower Workshop with multiple teams and roles
 
+*** These playbook cannot be run until the tower server has been entitled with a subscription ***
+
 This workshop creates the following:
 
 - 2 users (helpdesk1 and engineer1)
