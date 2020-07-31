@@ -1,0 +1,26 @@
+---
+
+- name: Check for existing ServiceNow OAuth Application
+  delegate_to: localhost
+  shell:
+    cmd: |
+      tower-cli application list --tower-password '{{ tower.password }}' \
+                --tower-username '{{ tower.username }}' \
+                --tower-host '{{ tower.host }}' --insecure \
+                --name 'ServiceNow'
+  register: sn_app
+
+#- name: Print Results
+#  debug:
+#    var: sn_app
+
+- name: Create OAuth Application for ServiceNow
+  delegate_to: localhost
+  shell:
+    cmd: |
+      tower-cli application create --tower-password '{{ tower.password }}' --tower-username '{{ tower.username }}' \
+                --tower-host '{{ tower.host }}' --insecure \
+                --name 'ServiceNow' --organization 'Default' \
+                --authorization-grant-type 'authorization-code' --client-type 'confidential' \
+                --redirect-uris 'https://dev102116.service-now.com/oauth_redirect.do'
+  when: '"No records found" in sn_app.stdout'
