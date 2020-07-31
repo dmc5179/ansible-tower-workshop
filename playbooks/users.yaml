@@ -170,15 +170,6 @@
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
 
-- name: Add wordpress1 to the Infrastructure Inventory
-  tower_role:
-    user: wordpress1
-    state: present
-    role: use
-    inventory: "Wordpress_RHEL"
-    tower_config_file: "files/tower_cli.cfg"
-  delegate_to: localhost
-
 - name: Add wordpress1 to default org
   tower_role:
     user: wordpress1
