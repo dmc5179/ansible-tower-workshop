@@ -56,6 +56,24 @@
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
 
+- name: Add helpdesk1 to Scanning job template
+  tower_role:
+    user: helpdesk1
+    job_template: "Scanning_Dynamic"
+    state: present
+    role: execute
+    tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
+
+- name: Add helpdesk1 to Scanning job template
+  tower_role:
+    user: helpdesk1
+    job_template: "Scanning_Dynamic_Satellite"
+    state: present
+    role: execute
+    tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
+
 - name: Add helpdesk1 to RHEL_STIGS project
   tower_role:
     user: helpdesk1
@@ -140,6 +158,24 @@
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
 
+- name: Add engineer1 to Scanning job template
+  tower_role:
+    user: engineer1
+    job_template: "Scanning_Dynamic"
+    state: present
+    role: execute
+    tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
+
+- name: Add engineer1 to Scanning job template
+  tower_role:
+    user: engineer1
+    job_template: "Scanning_Dynamic_Satellite"
+    state: present
+    role: execute
+    tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
+
 - name: Add engineer1 to RHEL_STIGS  project
   tower_role:
     user: engineer1
@@ -179,16 +215,46 @@
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
 
-- name: Add wordpress1 to grimlock credentials
+- name: Add all users to grimlock credentials
+  delegate_to: localhost
   tower_role:
-    user: wordpress1
+    user: '{{ item }}'
     credential: "grimlock"
     state: present
     role: use
     tower_config_file: "files/tower_cli.cfg"
-  delegate_to: localhost
+  with_items:
+    - 'helpdesk1'
+    - 'engineer1'
+    - 'wordpress1'
 
-- name: Add wordpress1 to wordpress inventory
+- name: Add all users to amz credentials
+  delegate_to: localhost
+  tower_role:
+    user: '{{ item }}'
+    credential: "amz"
+    state: present
+    role: use 
+    tower_config_file: "files/tower_cli.cfg"
+  with_items:
+    - 'helpdesk1'
+    - 'engineer1'
+    - 'wordpress1'
+
+- name: Add all users to satellite credentials
+  delegate_to: localhost
+  tower_role:
+    user: '{{ item }}'
+    credential: "satellite_credential"
+    state: present
+    role: use 
+    tower_config_file: "files/tower_cli.cfg"
+  with_items:
+    - 'helpdesk1'
+    - 'engineer1'
+    - 'wordpress1'
+
+- name: Add wordpress1 to wordpress RHEL inventory
   tower_role:
     user: wordpress1
     inventory: "Wordpress_RHEL"
@@ -196,6 +262,43 @@
     role: use
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
+
+- name: Add wordpress1 to wordpress OCP inventory
+  tower_role:
+    user: wordpress1
+    inventory: "Wordpress_OCP"
+    state: present
+    role: use
+    tower_config_file: "files/tower_cli.cfg"
+  delegate_to: localhost
+
+- name: Add all users to AWS_Dynamic Inventory
+  delegate_to: localhost
+  tower_role:
+    user: '{{ item }}'
+    inventory: "AWS_Dynamic"
+    state: present
+    role: use
+    tower_config_file: "files/tower_cli.cfg"
+    tower_config_file: "files/tower_cli.cfg"
+  with_items:
+    - 'helpdesk1'
+    - 'engineer1'
+    - 'wordpress1'
+
+- name: Add all user to Satellite_Dynamic Inventory
+  delegate_to: localhost
+  tower_role:
+    user: '{{ item }}'
+    inventory: "Satellite_Dynamic"
+    state: present
+    role: use
+    tower_config_file: "files/tower_cli.cfg"
+    tower_config_file: "files/tower_cli.cfg"
+  with_items:
+    - 'helpdesk1'
+    - 'engineer1'
+    - 'wordpress1'
 
 - name: Add wordpress1 to RHEL job template
   tower_role:
