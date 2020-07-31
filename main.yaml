@@ -47,6 +47,11 @@
       tags:
         - users
 
+    - name: Create OAuth Application
+      import_tasks: playbooks/applications.yaml
+      tags:
+        - applications
+
     - name: Configure Splunk Logging Aggregator
       import_tasks: playbooks/splunk.yaml
       when: ( splunk.enabled | bool )

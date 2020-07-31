@@ -6,21 +6,35 @@
     cmd: |
       tower-cli application list --tower-password '{{ tower.password }}' \
                 --tower-username '{{ tower.username }}' \
-                --tower-host '{{ tower.host }}' --insecure \
+                --tower-host '{{ tower.host }}' --insecure --format json \
                 --name 'ServiceNow'
-  register: sn_app
+  register: sn_app_check
 
-#- name: Print Results
-#  debug:
-#    var: sn_app
+- name: Print Results
+  debug:
+    var: sn_app_check
 
 - name: Create OAuth Application for ServiceNow
   delegate_to: localhost
   shell:
     cmd: |
       tower-cli application create --tower-password '{{ tower.password }}' --tower-username '{{ tower.username }}' \
-                --tower-host '{{ tower.host }}' --insecure \
+                --tower-host '{{ tower.host }}' --insecure --format json \
                 --name 'ServiceNow' --organization 'Default' \
                 --authorization-grant-type 'authorization-code' --client-type 'confidential' \
                 --redirect-uris 'https://dev102116.service-now.com/oauth_redirect.do'
-  when: '"No records found" in sn_app.stdout'
+  #when: '"No records found" in sn_app_check.stdout'
+  register: sn_app
+
+- name: Print Results
+  debug:
+    var: sn_app
+
+- name: Allow External Users to Create OAuth2 Tokens
+  delegate_to: localhost
+  shell:
+    cmd: |
+      tower-cli setting modify --tower-password '{{ tower.password }}' \
+                --tower-username '{{ tower.username }}' \
+                --tower-host '{{ tower.host }}' --insecure --format json \
+                ALLOW_OAUTH2_FOR_EXTERNAL_USERS true
