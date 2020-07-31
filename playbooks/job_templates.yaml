@@ -15,7 +15,7 @@
     description: "Job to check host compliance"
   delegate_to: localhost
 
-- name: Create Scanning job template in tower
+- name: Create Dynamic Scanning job template with EC2 source in tower
   tower_job_template:
     name: "Scanning_Dynamic"
     job_type: "check"
@@ -31,6 +31,21 @@
     description: "Job to check host compliance"
   delegate_to: localhost
 
+- name: Create Dynamic Scanning job template with Satellite source in tower
+  tower_job_template:
+    name: "Scanning_Dynamic_Satellite"
+    job_type: "check"
+    inventory: "Satellite_Dynamic"
+    project: "RHEL_STIGS"
+    playbook: "stig.yaml"
+    credential: "grimlock"
+    state: "present"
+    tower_config_file: "files/tower_cli.cfg"
+    survey_enabled: true
+    survey_spec: "{{ lookup('file', 'snow_survey.json') }}"
+    become_enabled: true
+    description: "Job to check host compliance"
+  delegate_to: localhost
 
 - name: Create Remediation job template in tower
   tower_job_template:
