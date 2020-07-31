@@ -74,14 +74,26 @@
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
 
-- name: Add tower inventory source
+- name: Add Satellite Inventory
+  tower_inventory:
+    name: 'Satellite_Dynamic'
+    description: "Instances registered with Satellite"
+    organization: "Default"
+    state: present
+    tower_config_file: "files/tower_cli.cfg"
+    variables:
+      ansible_user: ec2-user
+  delegate_to: localhost
+
+- name: Add Satellite inventory source
   tower_inventory_source:
     name: Satellite
     description: Hosts from Satellite
     inventory: 'Satellite_Dynamic'
     credential: satellite_credential
     source: satellite6
+    source_vars: "{ ansible_user: ec2-user }"
     update_on_launch: true
     overwrite: true
     state: present
-    validate_certs: false
+    tower_config_file: "files/tower_cli.cfg"
