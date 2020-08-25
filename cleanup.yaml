@@ -5,20 +5,20 @@
   gather_facts: false
   tasks:
 
-    - name: Remove Users
-      include_tasks: playbooks/users_cleanup.yaml
+    #- name: Remove Users
+    #  include_tasks: playbooks/users_cleanup.yaml
 
-    - name: Remove jobs
-      include_tasks: playbooks/job_templates_cleanup.yaml
+    #- name: Remove jobs
+    #  include_tasks: playbooks/job_templates_cleanup.yaml
 
-    - name: Remove Projects
-      include_tasks: playbooks/projects_cleanup.yaml
+    #- name: Remove Projects
+    #  include_tasks: playbooks/projects_cleanup.yaml
 
-    - name: Remove inventory
-      include_tasks: playbooks/add_inventory_cleanup.yaml
+    #- name: Remove inventory
+    #  include_tasks: playbooks/add_inventory_cleanup.yaml
 
-    - name: Remove Teams
-      include_tasks: playbooks/teams_cleanup.yaml
+    #- name: Remove Teams
+    #  include_tasks: playbooks/teams_cleanup.yaml
 
-    - name: Remove Credentials
-      include_tasks: playbooks/credentials_cleanup.yaml
+    #- name: Remove Credentials
+    #  include_tasks: playbooks/credentials_cleanup.yaml
