@@ -47,13 +47,19 @@
       tags:
         - users
 
-    - name: Create OAuth Application
-      import_tasks: playbooks/applications.yaml
-      tags:
-        - applications
+    # TODO: Not supported yet
+    #- name: Create OAuth Application
+    #  import_tasks: playbooks/applications.yaml
+    #  tags:
+    #    - applications
 
-    - name: Configure Splunk Logging Aggregator
-      import_tasks: playbooks/splunk.yaml
-      when: ( splunk.enabled | bool )
-      tags:
-        - splunk
+    # TODO: Not supported yet
+    #- name: Configure Splunk Logging Aggregator
+    #  import_tasks: playbooks/splunk.yaml
+    #  when: ( splunk.enabled | bool )
+    #  tags:
+    #    - splunk
+
+    # TODO: Not supported yet
+    #- name: Create Ansible Tower Workflow
+    #  import_tasks: playbooks/workflow.yaml
