@@ -1,4 +1,6 @@
 *.swp
+*.mine
+inventory/inventory
 files/tower_cli.cfg
 ansible.log
 group_vars/all/all.yaml
