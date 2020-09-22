@@ -3,7 +3,7 @@
   tower_team:
     name: Scanning
     description: Team for scanning devices for compliance
-    organization: Default
+    organization: '{{ tower.organization }}'
     state: present
     tower_config_file: 'files/tower_cli.cfg'
   delegate_to: localhost
@@ -12,7 +12,7 @@
   tower_team:
     name: Remediation
     description: Team for remediating devices for compliance
-    organization: Default
+    organization: '{{ tower.organization }}'
     state: present
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
@@ -21,7 +21,7 @@
   tower_team:
     name: Wordpress
     description: Team for installing Wordpress
-    organization: Default
+    organization: '{{ tower.organization }}'
     state: present
     tower_config_file: "files/tower_cli.cfg"
   delegate_to: localhost
