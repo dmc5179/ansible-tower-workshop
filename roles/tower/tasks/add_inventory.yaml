@@ -52,6 +52,7 @@
   delegate_to: localhost
 
 - name: Add Wordpress on OCP inventory
+  delegate_to: localhost
   tower_inventory:
     name: "Wordpress_OCP"
     description: "Wordpress on OCP Servers"
@@ -111,6 +112,7 @@
   delegate_to: localhost
 
 - name: Add Satellite inventory source
+  delegate_to: localhost
   tower_inventory_source:
     name: Satellite
     description: Hosts from Satellite
