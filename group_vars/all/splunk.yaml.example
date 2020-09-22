@@ -1,0 +1,10 @@
+---
+
+splunk:
+  enabled: true
+  host: splunk.example.com
+  hec:
+    enabled: true
+    ssl: false
+    token: aaa-bbb-ccc-ddd-eee-fff
+    port: 8088
