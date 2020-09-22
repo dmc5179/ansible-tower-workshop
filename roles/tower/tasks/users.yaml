@@ -74,7 +74,7 @@
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
-- name: Add helpdesk1 to Scanning job template
+- name: Add helpdesk1 to AWS Dynamic Scanning job template
   tower_role:
     user: helpdesk1
     job_template: "Scanning_Dynamic"
@@ -85,8 +85,9 @@
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
+  when: ( aws_dynamic_inventory | bool )
 
-- name: Add helpdesk1 to Scanning job template
+- name: Add helpdesk1 to Satellite Dynamic Scanning job template
   tower_role:
     user: helpdesk1
     job_template: "Scanning_Dynamic_Satellite"
@@ -97,6 +98,7 @@
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
+  when: ( satellite_dynamic_inventory | bool )
 
 - name: Add helpdesk1 to RHEL_STIGS project
   tower_role:
@@ -220,6 +222,7 @@
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
+  when: ( aws_dynamic_inventory | bool )
 
 - name: Add engineer1 to Scanning job template
   tower_role:
@@ -232,6 +235,7 @@
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
+  when: ( satellite_dynamic_inventory | bool )
 
 - name: Add engineer1 to RHEL_STIGS  project
   tower_role:
@@ -311,6 +315,7 @@
     tower_username: '{{ tower.username }}'
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
+  when: ( aws_dynamic_inventory | bool )
   with_items:
     - 'helpdesk1'
     - 'engineer1'
@@ -327,6 +332,7 @@
     tower_username: '{{ tower.username }}'
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
+  when: ( satellite_dynamic_inventory | bool )
   with_items:
     - 'helpdesk1'
     - 'engineer1'
@@ -367,6 +373,7 @@
     tower_username: '{{ tower.username }}'
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
+  when: ( aws_dynamic_inventory | bool )
   with_items:
     - 'helpdesk1'
     - 'engineer1'
@@ -383,6 +390,7 @@
     tower_username: '{{ tower.username }}'
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
+  when: ( satellite_dynamic_inventory | bool )
   with_items:
     - 'helpdesk1'
     - 'engineer1'
