@@ -3,7 +3,7 @@
   tower_project:
     name: "RHEL_STIGS"
     description: "Compliance Remediation Project"
-    organization: "Default"
+    organization: "{{ tower.organization }}"
     scm_update_on_launch: true
     scm_update_cache_timeout: 60
     scm_type: git
@@ -19,7 +19,7 @@
   tower_project:
     name: "Wordpress_RHEL"
     description: "Wordpress on RHEL Project"
-    organization: "Default"
+    organization: "{{ tower.organization }}"
     scm_update_on_launch: true
     scm_update_cache_timeout: 60
     scm_type: git
@@ -35,7 +35,7 @@
   tower_project:
     name: "Wordpress_OCP"
     description: "Wordpress on OCP Project"
-    organization: "Default"
+    organization: "{{ tower.organization }}"
     scm_update_on_launch: true
     scm_update_cache_timeout: 60
     scm_type: git

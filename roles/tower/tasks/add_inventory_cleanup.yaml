@@ -4,7 +4,7 @@
   tower_inventory:
     name: "Infrastructure"
     description: "Infrastructure Servers"
-    organization: "Default"
+    organization: "{{ tower.organization }}"
     state: absent
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'
@@ -16,7 +16,7 @@
   tower_inventory:
     name: "Wordpress_RHEL"
     description: "Wordpress RHEL Servers"
-    organization: "Default"
+    organization: "{{ tower.organization }}"
     state: absent
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'
@@ -28,7 +28,7 @@
   tower_inventory:
     name: "Wordpress_OCP"
     description: "Wordpress on OCP Servers"
-    organization: "Default"
+    organization: "{{ tower.organization }}"
     state: absent
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'
@@ -40,7 +40,7 @@
   tower_inventory:
     name: 'AWS_Wordpress_Inventory'
     description: "Amazon Instances"
-    organization: "Default"
+    organization: "{{ tower.organization }}"
     state: absent
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'

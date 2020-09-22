@@ -26,7 +26,7 @@
 - name: Remove helpdesk1 from default org
   tower_role:
     user: helpdesk1
-    organization: 'Default'
+    organization: '{{ tower.organization }}'
     state: absent
     role: member
     tower_host: '{{ tower.host }}'
@@ -98,7 +98,7 @@
 - name: Remove engineer1 from default org
   tower_role:
     user: engineer1
-    organization: 'Default'
+    organization: '{{ tower.organization }}'
     state: absent
     role: member
     tower_host: '{{ tower.host }}'
@@ -171,7 +171,7 @@
 - name: Remove wordpress1 from default org
   tower_role:
     user: wordpress1
-    organization: 'Default'
+    organization: '{{ tower.organization }}'
     state: absent
     role: member
     tower_host: '{{ tower.host }}'

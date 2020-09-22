@@ -2,7 +2,7 @@
 - name: Remove Tower Project for compliance scanning and remediation
   tower_project:
     name: "RHEL_STIGS"
-    organization: "Default"
+    organization: "{{ tower.organization }}"
     state: absent
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'
@@ -13,7 +13,7 @@
 - name: Remove Tower Project for Wordpress on RHEL
   tower_project:
     name: "Wordpress_RHEL"
-    organization: "Default"
+    organization: "{{ tower.organization }}"
     state: absent
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'
@@ -24,7 +24,7 @@
 - name: Remove Tower Project for Wordpress on OCP
   tower_project:
     name: "Wordpress_OCP"
-    organization: "Default"
+    organization: "{{ tower.organization }}"
     state: absent
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'

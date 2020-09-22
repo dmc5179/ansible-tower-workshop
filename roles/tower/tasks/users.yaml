@@ -41,7 +41,7 @@
 - name: Add helpdesk1 to default org
   tower_role:
     user: helpdesk1
-    organization: 'Default'
+    organization: '{{ tower.organization }}'
     state: present
     role: member
     tower_host: '{{ tower.host }}'
@@ -164,7 +164,7 @@
 - name: Add engineer1 to default org
   tower_role:
     user: engineer1
-    organization: 'Default'
+    organization: '{{ tower.organization }}'
     state: present
     role: member
     tower_host: '{{ tower.host }}'
@@ -275,7 +275,7 @@
 - name: Add wordpress1 to default org
   tower_role:
     user: wordpress1
-    organization: 'Default'
+    organization: '{{ tower.organization }}'
     state: present
     role: member
     tower_host: '{{ tower.host }}'
