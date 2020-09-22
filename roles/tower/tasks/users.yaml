@@ -50,10 +50,10 @@
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
-- name: Add helpdesk1 to grimlock credentials
+- name: Add helpdesk1 to {{ machine_credentials_name }} credentials
   tower_role:
     user: helpdesk1
-    credential: "grimlock"
+    credential: "{{ machine_credentials_name }}"
     state: present
     role: use
     tower_host: '{{ tower.host }}'
@@ -173,10 +173,10 @@
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
-- name: Add engineer1 to grimlock credentials
+- name: Add engineer1 to {{ machine_credentials_name }} credentials
   tower_role:
     user: engineer1
-    credential: "grimlock"
+    credential: "{{ machine_credentials_name }}"
     state: present
     role: use
     tower_host: '{{ tower.host }}'
@@ -284,11 +284,11 @@
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
-- name: Add all users to grimlock credentials
+- name: Add all users to {{ machine_credentials_name }} credentials
   delegate_to: localhost
   tower_role:
     user: '{{ item }}'
-    credential: "grimlock"
+    credential: "{{ machine_credentials_name }}"
     state: present
     role: use
     tower_host: '{{ tower.host }}'

@@ -6,7 +6,7 @@
     inventory: "Infrastructure"
     project: "RHEL_STIGS"
     playbook: "stig.yaml"
-    credential: "grimlock"
+    credential: "{{ machine_credentials_name }}"
     state: "present"
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'
@@ -25,7 +25,7 @@
     inventory: "AWS_Dynamic"
     project: "RHEL_STIGS"
     playbook: "stig.yaml"
-    credential: "grimlock"
+    credential: "{{ machine_credentials_name }}"
     state: "present"
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'
@@ -44,7 +44,7 @@
     inventory: "Satellite_Dynamic"
     project: "RHEL_STIGS"
     playbook: "stig.yaml"
-    credential: "grimlock"
+    credential: "{{ machine_credentials_name }}"
     state: "present"
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'
@@ -63,7 +63,7 @@
     inventory: "Infrastructure"
     project: "RHEL_STIGS"
     playbook: "stig.yaml"
-    credential: "grimlock"
+    credential: "{{ machine_credentials_name }}"
     state: "present"
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'
@@ -81,7 +81,7 @@
     inventory: "Wordpress_RHEL"
     project: "Wordpress_RHEL"
     playbook: "main.yml"
-    credential: "grimlock"
+    credential: "{{ machine_credentials_name }}"
     state: "present"
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'

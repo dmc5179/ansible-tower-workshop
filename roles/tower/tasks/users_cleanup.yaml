@@ -26,10 +26,10 @@
     tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
 
-- name: Remove helpdesk1 from grimlock credentials
+- name: Remove helpdesk1 from {{ machine_credentials_name }} credentials
   tower_role:
     user: helpdesk1
-    credential: "grimlock"
+    credential: "{{ machine_credentials_name }}"
     state: absent
     role: use
     tower_config_file: "files/tower_cli.cfg"
@@ -80,10 +80,10 @@
     tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
 
-- name: Remove engineer1 from grimlock credentials
+- name: Remove engineer1 from {{ machine_credentials_name }} credentials
   tower_role:
     user: engineer1
-    credential: "grimlock"
+    credential: "{{ machine_credentials_name }}"
     state: absent
     role: use
     tower_config_file: "files/tower_cli.cfg"
@@ -136,10 +136,10 @@
   ignore_errors: true
   delegate_to: localhost
 
-- name: Remove wordpress1 from grimlock credentials
+- name: Remove wordpress1 from {{ machine_credentials_name }} credentials
   tower_role:
     user: wordpress1
-    credential: "grimlock"
+    credential: "{{ machine_credentials_name }}"
     state: absent
     role: use
     tower_config_file: "files/tower_cli.cfg"
