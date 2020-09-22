@@ -6,60 +6,59 @@
   tasks:
 
     - name: Create Credentials
-      import_tasks: playbooks/credentials.yaml
-      vars:
-        action: present
+      import_role:
+        name: tower
+        tasks_from: credentials.yaml
       tags:
         - credentials
 
     - name: Create Teams
-      import_tasks: playbooks/teams.yaml
-      vars: 
-        action: present
+      import_role:
+        name: tower
+        tasks_from: teams.yaml
       tags:
         - teams
 
     - name: Create an inventory
-      import_tasks: playbooks/add_inventory.yaml
-      vars: 
-        action: present
+      import_role:
+        name: tower
+        tasks_from: add_inventory.yaml
       tags:
         - inventory
 
     - name: Create Projects
-      import_tasks: playbooks/projects.yaml
-      vars: 
-        action: present
+      import_role:
+        name: tower
+        tasks_from: projects.yaml
       tags:
         - projects
 
     - name: Create jobs
-      import_tasks: playbooks/job_templates.yaml
-      vars: 
-        action: present
+      import_role:
+        name: tower
+        tasks_from: job_templates.yaml
       tags:
         - jobs
 
     - name: Create Users
-      import_tasks: playbooks/users.yaml
-      vars: 
-        action: present
+      import_role:
+        name: tower
+        tasks_from: users.yaml
       tags:
         - users
 
     # TODO: Not supported yet
     #- name: Create OAuth Application
-    #  import_tasks: playbooks/applications.yaml
+    #  import_role:
+    #    name: tower
+    #    tasks_from: applications.yaml
     #  tags:
     #    - applications
 
     # TODO: Not supported yet
-    #- name: Configure Splunk Logging Aggregator
-    #  import_tasks: playbooks/splunk.yaml
-    #  when: ( splunk.enabled | bool )
-    #  tags:
-    #    - splunk
-
-    # TODO: Not supported yet
     #- name: Create Ansible Tower Workflow
-    #  import_tasks: playbooks/workflow.yaml
+    #  import_role:
+    #    name: tower
+    #    tasks_from: workflow.yaml
+    #  tags:
+    #    - workflow
