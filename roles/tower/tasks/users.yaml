@@ -280,7 +280,6 @@
     state: present
     role: use
     tower_config_file: "files/tower_cli.cfg"
-    tower_config_file: "files/tower_cli.cfg"
   with_items:
     - 'helpdesk1'
     - 'engineer1'
@@ -293,7 +292,6 @@
     inventory: "Satellite_Dynamic"
     state: present
     role: use
-    tower_config_file: "files/tower_cli.cfg"
     tower_config_file: "files/tower_cli.cfg"
   with_items:
     - 'helpdesk1'
