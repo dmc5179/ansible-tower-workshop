@@ -21,7 +21,7 @@
     state: present
     enabled: true
     variables:
-      ansible_user: ec2-user
+      ansible_user: 'ec2-user'
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'
     tower_password: '{{ tower.password }}'
@@ -64,6 +64,7 @@
     tower_verify_ssl: '{{ tower.verify_ssl }}'
 
 - name: Add Amazon Inventory
+  delegate_to: localhost
   tower_inventory:
     name: 'AWS_Dynamic'
     description: "Amazon Instances"
@@ -74,11 +75,12 @@
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
     variables:
-      ansible_user: ec2-user
-      ansible_python_interpreter: /usr/bin/python3
-  delegate_to: localhost
+      ansible_user: 'ec2-user'
+      ansible_python_interpreter: '/usr/bin/python3'
+  when: ( aws_dynamic_inventory | bool )
 
 - name: Add ec2 inventory source
+  delegate_to: localhost
   tower_inventory_source:
     name: AWS
     description: Hosts from AWS
@@ -95,7 +97,7 @@
     tower_username: '{{ tower.username }}'
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
-  delegate_to: localhost
+  when: ( aws_dynamic_inventory | bool )
 
 - name: Add Satellite Inventory
   tower_inventory:
@@ -108,8 +110,9 @@
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
     variables:
-      ansible_user: ec2-user
+      ansible_user: 'ec2-user'
   delegate_to: localhost
+  when: ( satellite_dynamic_inventory | bool )
 
 - name: Add Satellite inventory source
   delegate_to: localhost
@@ -127,3 +130,4 @@
     tower_username: '{{ tower.username }}'
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
+  when: ( satellite_dynamic_inventory | bool )

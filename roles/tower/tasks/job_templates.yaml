@@ -13,7 +13,7 @@
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
     survey_enabled: true
-    survey_spec: "{{ lookup('file', 'snow_survey.json') }}"
+    survey_spec: "{{ lookup('template', 'snow_survey.json.j2') }}"
     become_enabled: true
     description: "Job to check host compliance"
   delegate_to: localhost
@@ -32,7 +32,7 @@
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
     survey_enabled: true
-    survey_spec: "{{ lookup('file', 'snow_survey.json') }}"
+    survey_spec: "{{ lookup('template', 'snow_survey.json.j2') }}"
     become_enabled: true
     description: "Job to check host compliance"
   delegate_to: localhost
@@ -51,7 +51,7 @@
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
     survey_enabled: true
-    survey_spec: "{{ lookup('file', 'snow_survey.json') }}"
+    survey_spec: "{{ lookup('template', 'snow_survey.json.j2') }}"
     become_enabled: true
     description: "Job to check host compliance"
   delegate_to: localhost
