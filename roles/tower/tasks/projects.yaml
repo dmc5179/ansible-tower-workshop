@@ -9,7 +9,10 @@
     scm_type: git
     scm_url: 'https://github.com/dmc5179/ansible-workshop-compliance-remediation.git'
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add Tower Project for Wordpress on RHEL
@@ -22,7 +25,10 @@
     scm_type: git
     scm_url: 'https://github.com/dmc5179/ansible-wordpress-rhel.git'
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add Tower Project for Wordpress on OCP
@@ -36,5 +42,8 @@
     scm_url: 'https://github.com/dmc5179/ansible-wordpress-ocp.git'
     custom_virtualenv: "/var/lib/awx/venv/ansible"
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost

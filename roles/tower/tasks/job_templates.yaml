@@ -8,7 +8,10 @@
     playbook: "stig.yaml"
     credential: "grimlock"
     state: "present"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
     survey_enabled: true
     survey_spec: "{{ lookup('file', 'snow_survey.json') }}"
     become_enabled: true
@@ -24,7 +27,10 @@
     playbook: "stig.yaml"
     credential: "grimlock"
     state: "present"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
     survey_enabled: true
     survey_spec: "{{ lookup('file', 'snow_survey.json') }}"
     become_enabled: true
@@ -40,7 +46,10 @@
     playbook: "stig.yaml"
     credential: "grimlock"
     state: "present"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
     survey_enabled: true
     survey_spec: "{{ lookup('file', 'snow_survey.json') }}"
     become_enabled: true
@@ -56,7 +65,10 @@
     playbook: "stig.yaml"
     credential: "grimlock"
     state: "present"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
     survey_enabled: false
     become_enabled: true
     description: "Job to remediate hosts"
@@ -71,7 +83,10 @@
     playbook: "main.yml"
     credential: "grimlock"
     state: "present"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
     survey_enabled: false
     become_enabled: true
     description: "Job to install Wordpress on RHEL"
@@ -85,7 +100,10 @@
     project: "Wordpress_OCP"
     playbook: "main.yaml"
     state: "present"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
     survey_enabled: true
     survey_spec: "{{ lookup('file', 'ocp_survey.json') }}"
     become_enabled: true

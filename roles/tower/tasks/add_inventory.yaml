@@ -6,10 +6,14 @@
     description: "Infrastructure Servers"
     organization: "Default"
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add host to Infrastructure inventory
+  delegate_to: localhost
   tower_host:
     name: grimlock-wordpress.redhatgov.io
     description: "Local Host Group"
@@ -18,7 +22,10 @@
     enabled: true
     variables:
       ansible_user: ec2-user
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
 
 - name: Add Wordpress on RHEL inventory
   tower_inventory:
@@ -26,7 +33,10 @@
     description: "Wordpress RHEL Servers"
     organization: "Default"
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add host to Wordpress on RHEL inventory
@@ -35,7 +45,10 @@
     description: "Wordpress RHEL Server"
     inventory: "Wordpress_RHEL"
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add Wordpress on OCP inventory
@@ -44,7 +57,10 @@
     description: "Wordpress on OCP Servers"
     organization: "Default"
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
 
 - name: Add Amazon Inventory
   tower_inventory:
@@ -52,7 +68,10 @@
     description: "Amazon Instances"
     organization: "Default"
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
     variables:
       ansible_user: ec2-user
       ansible_python_interpreter: /usr/bin/python3
@@ -71,7 +90,10 @@
     update_on_launch: true
     overwrite: true
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add Satellite Inventory
@@ -80,7 +102,10 @@
     description: "Instances registered with Satellite"
     organization: "Default"
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
     variables:
       ansible_user: ec2-user
   delegate_to: localhost
@@ -96,4 +121,7 @@
     update_on_launch: true
     overwrite: true
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'

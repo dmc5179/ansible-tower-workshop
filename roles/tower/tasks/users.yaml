@@ -8,7 +8,10 @@
     first_name: Help
     last_name: Desk
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add helpdesk1 to the member role of Scanning Team
@@ -17,7 +20,10 @@
     target_team: "Scanning"
     role: member
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add helpdesk1 to the Infrastructure Inventory
@@ -26,7 +32,10 @@
     state: present
     role: use
     inventory: "Infrastructure"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add helpdesk1 to default org
@@ -35,7 +44,10 @@
     organization: 'Default'
     state: present
     role: member
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add helpdesk1 to grimlock credentials
@@ -44,7 +56,10 @@
     credential: "grimlock"
     state: present
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add helpdesk1 to Scanning job template
@@ -53,7 +68,10 @@
     job_template: "Scanning"
     state: present
     role: execute
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add helpdesk1 to Scanning job template
@@ -62,7 +80,10 @@
     job_template: "Scanning_Dynamic"
     state: present
     role: execute
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add helpdesk1 to Scanning job template
@@ -71,7 +92,10 @@
     job_template: "Scanning_Dynamic_Satellite"
     state: present
     role: execute
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add helpdesk1 to RHEL_STIGS project
@@ -80,7 +104,10 @@
     project: "RHEL_STIGS"
     state: present
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 # Engineer user
@@ -88,11 +115,14 @@
   tower_user:
     username: engineer1
     password: redhat1
-    email: engineer1@example.org
+    email: 'engineer1@example.org'
     first_name: Engineer
     last_name: Doe
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add engineer1 to the member role of Remediation Team
@@ -101,7 +131,10 @@
     target_team: "Remediation"
     role: member
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add engineer1 to the member role of Scanning Team
@@ -110,7 +143,10 @@
     target_team: "Scanning"
     role: member
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add engineer1 to the Infrastructure Inventory
@@ -119,7 +155,10 @@
     state: present
     role: use
     inventory: "Infrastructure"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add engineer1 to default org
@@ -128,7 +167,10 @@
     organization: 'Default'
     state: present
     role: member
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add engineer1 to grimlock credentials
@@ -137,7 +179,10 @@
     credential: "grimlock"
     state: present
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add engineer1 to Remediation job template
@@ -146,7 +191,10 @@
     job_template: "Remediation"
     state: present
     role: execute
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add engineer1 to Scanning job template
@@ -155,7 +203,10 @@
     job_template: "Scanning"
     state: present
     role: execute
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add engineer1 to Scanning job template
@@ -164,7 +215,10 @@
     job_template: "Scanning_Dynamic"
     state: present
     role: execute
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add engineer1 to Scanning job template
@@ -173,7 +227,10 @@
     job_template: "Scanning_Dynamic_Satellite"
     state: present
     role: execute
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add engineer1 to RHEL_STIGS  project
@@ -182,7 +239,10 @@
     project: "RHEL_STIGS"
     state: present
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 # Wordpress user
@@ -194,7 +254,10 @@
     first_name: Word
     last_name: Press
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add wordpress1 to the member role of Wordpress Team
@@ -203,7 +266,10 @@
     target_team: "Wordpress"
     role: member
     state: present
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add wordpress1 to default org
@@ -212,7 +278,10 @@
     organization: 'Default'
     state: present
     role: member
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add all users to grimlock credentials
@@ -222,7 +291,10 @@
     credential: "grimlock"
     state: present
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   with_items:
     - 'helpdesk1'
     - 'engineer1'
@@ -235,7 +307,10 @@
     credential: "amz"
     state: present
     role: use 
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   with_items:
     - 'helpdesk1'
     - 'engineer1'
@@ -248,7 +323,10 @@
     credential: "satellite_credential"
     state: present
     role: use 
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   with_items:
     - 'helpdesk1'
     - 'engineer1'
@@ -260,7 +338,10 @@
     inventory: "Wordpress_RHEL"
     state: present
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add wordpress1 to wordpress OCP inventory
@@ -269,7 +350,10 @@
     inventory: "Wordpress_OCP"
     state: present
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add all users to AWS_Dynamic Inventory
@@ -279,7 +363,10 @@
     inventory: "AWS_Dynamic"
     state: present
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   with_items:
     - 'helpdesk1'
     - 'engineer1'
@@ -292,7 +379,10 @@
     inventory: "Satellite_Dynamic"
     state: present
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   with_items:
     - 'helpdesk1'
     - 'engineer1'
@@ -304,7 +394,10 @@
     job_template: "Wordpress_on_RHEL"
     state: present
     role: execute
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add wordpress1 to OCP job template
@@ -313,7 +406,10 @@
     job_template: "Wordpress_on_OCP"
     state: present
     role: execute
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add wordpress1 to Wordpress_RHEL project
@@ -322,7 +418,10 @@
     project: "Wordpress_RHEL"
     state: present
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Add wordpress1 to Wordpress_OCP project
@@ -331,6 +430,9 @@
     project: "Wordpress_OCP"
     state: present
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
