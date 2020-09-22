@@ -14,18 +14,8 @@ tower:
   host: tower.hostname.com
   certificate: 
 
-ssl_enabled: false
-host_credentials: 'ssh_public_key_file'
+host_credentials: 'path to ssh_public_key_file'
 
 satellite_server: 'https://satellite.example.com'
 satellite_username: 'username'
 satellite_password: 'password'
-
-splunk:
-  enabled: true
-  host: splunk.example.com
-  hec:
-    enabled: true
-    ssl: false
-    token: abcd-1234-efgh-5678
-    port: 8088
