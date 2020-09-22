@@ -4,7 +4,10 @@
     name: "RHEL_STIGS"
     organization: "Default"
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Remove Tower Project for Wordpress on RHEL
@@ -12,7 +15,10 @@
     name: "Wordpress_RHEL"
     organization: "Default"
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Remove Tower Project for Wordpress on OCP
@@ -20,5 +26,8 @@
     name: "Wordpress_OCP"
     organization: "Default"
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost

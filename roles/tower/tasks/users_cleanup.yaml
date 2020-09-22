@@ -5,7 +5,10 @@
     target_team: "Scanning"
     role: member
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove helpdesk1 from the Infrastructure Inventory
@@ -14,7 +17,10 @@
     state: absent
     role: use
     inventory: "Infrastructure"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove helpdesk1 from default org
@@ -23,7 +29,10 @@
     organization: 'Default'
     state: absent
     role: member
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove helpdesk1 from {{ machine_credentials_name }} credentials
@@ -32,7 +41,10 @@
     credential: "{{ machine_credentials_name }}"
     state: absent
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove helpdesk1 from Scanning job template
@@ -41,7 +53,10 @@
     job_template: "Scanning"
     state: absent
     role: execute
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove helpdesk1 from RHEL_STIGS project
@@ -50,7 +65,10 @@
     project: "RHEL_STIGS"
     state: absent
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove engineer1 from the member role of Remediation Team
@@ -59,7 +77,10 @@
     target_team: "Remediation"
     role: member
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove engineer1 from the Infrastructure Inventory
@@ -68,7 +89,10 @@
     state: absent
     role: use
     inventory: "Infrastructure"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove engineer1 from default org
@@ -77,7 +101,10 @@
     organization: 'Default'
     state: absent
     role: member
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove engineer1 from {{ machine_credentials_name }} credentials
@@ -86,7 +113,10 @@
     credential: "{{ machine_credentials_name }}"
     state: absent
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove engineer1 from Remediation job template
@@ -95,7 +125,10 @@
     job_template: "Remediation"
     state: absent
     role: execute
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove engineer1 from RHEL_STIGS  project
@@ -104,7 +137,10 @@
     project: "RHEL_STIGS"
     state: absent
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove wordpress1 from the member role of Wordpress Team
@@ -113,7 +149,10 @@
     target_team: "Wordpress"
     role: member
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
 
 - name: Remove wordpress1 from the Infrastructure Inventory
@@ -122,7 +161,10 @@
     state: absent
     role: use
     inventory: "Wordpress_RHEL"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
   delegate_to: localhost
 
@@ -132,7 +174,10 @@
     organization: 'Default'
     state: absent
     role: member
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
   delegate_to: localhost
 
@@ -142,7 +187,10 @@
     credential: "{{ machine_credentials_name }}"
     state: absent
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
   delegate_to: localhost
 
@@ -152,7 +200,10 @@
     inventory: "Wordpress_RHEL"
     state: absent
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
   delegate_to: localhost
 
@@ -162,7 +213,10 @@
     job_template: "Wordpress_on_RHEL"
     state: absent
     role: execute
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
   delegate_to: localhost
 
@@ -172,7 +226,10 @@
     project: "Wordpress_RHEL"
     state: absent
     role: use
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
   delegate_to: localhost
 
@@ -182,7 +239,6 @@
     username: helpdesk1
     email: helpdesk1@example.org
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
   delegate_to: localhost
 
@@ -192,7 +248,6 @@
     username: engineer1
     email: engineer1@example.org
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
   ignore_errors: true
   delegate_to: localhost
 
@@ -202,6 +257,9 @@
     username: wordpress1
     email: wordpress1@example.org
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
   delegate_to: localhost

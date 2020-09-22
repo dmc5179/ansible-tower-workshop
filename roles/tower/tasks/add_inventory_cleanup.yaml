@@ -6,7 +6,10 @@
     description: "Infrastructure Servers"
     organization: "Default"
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Remove Wordpress on RHEL inventory
@@ -15,7 +18,10 @@
     description: "Wordpress RHEL Servers"
     organization: "Default"
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Remove Wordpress on OCP inventory
@@ -24,7 +30,10 @@
     description: "Wordpress on OCP Servers"
     organization: "Default"
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Remove Amazon Inventory
@@ -33,5 +42,8 @@
     description: "Amazon Instances"
     organization: "Default"
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost

@@ -6,7 +6,10 @@
     project: "RHEL_STIGS"
     playbook: "stig.yaml"
     state: "absent"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
   delegate_to: localhost
 
@@ -17,7 +20,10 @@
     project: "RHEL_STIGS"
     playbook: "stig.yaml"
     state: "absent"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
   delegate_to: localhost
 
@@ -28,7 +34,10 @@
     project: "Wordpress_RHEL"
     playbook: "main.yml"
     state: "absent"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
   delegate_to: localhost
 
@@ -39,6 +48,9 @@
     project: "Wordpress_OCP"
     playbook: "main.yaml"
     state: "absent"
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   ignore_errors: true
   delegate_to: localhost

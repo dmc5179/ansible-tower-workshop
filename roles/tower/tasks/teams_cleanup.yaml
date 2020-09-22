@@ -4,7 +4,10 @@
     name: Scanning
     organization: '{{ tower.organization }}'
     state: absent
-    tower_config_file: 'files/tower_cli.cfg'
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Create Remediation tower team
@@ -12,7 +15,10 @@
     name: Remediation
     organization: '{{ tower.organization }}'
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 - name: Create Wordpress team
@@ -20,5 +26,8 @@
     name: Wordpress
     organization: '{{ tower.organization }}'
     state: absent
-    tower_config_file: "files/tower_cli.cfg"
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
