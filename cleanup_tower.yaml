@@ -5,20 +5,54 @@
   gather_facts: false
   tasks:
 
-    #- name: Remove Users
-    #  include_tasks: playbooks/users_cleanup.yaml
+    # TODO: Not supported yet
+    #- name: Tower | Cleanup Workflows
+    #  import_role:
+    #    name: tower
+    #    tasks_from: workflow_cleanup.yaml
+    #  tags:
+    #    - workflow_cleanup
 
-    #- name: Remove jobs
-    #  include_tasks: playbooks/job_templates_cleanup.yaml
+    # TODO: Not supported yet
+    #- name: Tower | Cleanup OAuth Application
+    #  import_role:
+    #    name: tower
+    #    tasks_from: applications_cleanup.yaml
+    #  tags:
+    #    - applications_cleanup
 
-    #- name: Remove Projects
-    #  include_tasks: playbooks/projects_cleanup.yaml
 
-    #- name: Remove inventory
-    #  include_tasks: playbooks/add_inventory_cleanup.yaml
+    - name: Tower | Cleanup Job Templates
+      import_role:
+        name: tower
+        tasks_from: job_templates_cleanup.yaml
+      tags:
+        - jobs_cleanup
 
-    #- name: Remove Teams
-    #  include_tasks: playbooks/teams_cleanup.yaml
+    - name: Tower| Cleanup Projects
+      import_role:
+        name: tower
+        tasks_from: projects_cleanup.yaml
+      tags:
+        - projects_cleanup
 
-    #- name: Remove Credentials
-    #  include_tasks: playbooks/credentials_cleanup.yaml
+    - name: Tower | Cleanup Inventories
+      import_role:
+        name: tower
+        tasks_from: add_inventory_cleanup.yaml
+      tags:
+        - inventory_cleanup
+
+    - name: Tower | Cleanup Credentials
+      import_role:
+        name: tower
+        tasks_from: credentials_cleanup.yaml
+      tags:
+        - credentials_cleanup
+
+    - name: Tower | Cleanup Teams
+      import_role:
+        name: tower
+        tasks_from: teams_cleanup.yaml
+      tags:
+        - teams_cleanup

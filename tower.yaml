@@ -5,42 +5,42 @@
   gather_facts: false
   tasks:
 
-    - name: Create Credentials
+    - name: Tower | Create Credentials
       import_role:
         name: tower
         tasks_from: credentials.yaml
       tags:
         - credentials
 
-    - name: Create Teams
+    - name: Tower | Create Teams
       import_role:
         name: tower
         tasks_from: teams.yaml
       tags:
         - teams
 
-    - name: Create an inventory
+    - name: Tower | Create Inventories
       import_role:
         name: tower
         tasks_from: add_inventory.yaml
       tags:
         - inventory
 
-    - name: Create Projects
+    - name: Tower | Create Projects
       import_role:
         name: tower
         tasks_from: projects.yaml
       tags:
         - projects
 
-    - name: Create jobs
+    - name: Tower | Create jobs
       import_role:
         name: tower
         tasks_from: job_templates.yaml
       tags:
         - jobs
 
-    - name: Create Users
+    - name: Tower | Create Users
       import_role:
         name: tower
         tasks_from: users.yaml
@@ -48,7 +48,7 @@
         - users
 
     # TODO: Not supported yet
-    #- name: Create OAuth Application
+    #- name: Tower | Create OAuth Applications
     #  import_role:
     #    name: tower
     #    tasks_from: applications.yaml
@@ -56,7 +56,7 @@
     #    - applications
 
     # TODO: Not supported yet
-    #- name: Create Ansible Tower Workflow
+    #- name: Tower | Create Workflows
     #  import_role:
     #    name: tower
     #    tasks_from: workflow.yaml
