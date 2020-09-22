@@ -1,0 +1,28 @@
+---
+
+- name: Splunk | Copy Splunk RPM to host
+  copy:
+    src: '/home/danclark/Downloads/splunk-8.0.3-a6754d8441bf-linux-2.6-x86_64.rpm'
+    dest: '/tmp'
+    mode: 0644
+
+- name: Splunk | Install Splunk RPM
+  become: true
+  yum:
+    name: '/tmp/splunk-8.0.3-a6754d8441bf-linux-2.6-x86_64.rpm'
+    state: present
+
+- name: Splunk | Disable bootstart
+  become: true
+  shell: /opt/splunk/bin/splunk disable boot-start
+
+- name: Splunk | Enable systemd service with splunk user
+  become: true
+  shell: sudo /opt/splunk/bin/splunk enable boot-start -systemd-managed 1 -user splunk
+
+- name: Splunk | Start and enable service
+  become: true
+  service:
+    name: Splunkd
+    state: started
+    enabled: true
