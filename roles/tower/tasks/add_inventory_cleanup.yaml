@@ -1,6 +1,6 @@
 ---
 
-- name: Remove Infrastructure tower inventory
+- name: Inventory | Remove Infrastructure tower inventory
   tower_inventory:
     name: "Infrastructure"
     description: "Infrastructure Servers"
@@ -12,7 +12,7 @@
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
-- name: Remove Wordpress on RHEL inventory
+- name: Inventory | Remove Wordpress on RHEL inventory
   tower_inventory:
     name: "Wordpress_RHEL"
     description: "Wordpress RHEL Servers"
@@ -24,7 +24,7 @@
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
-- name: Remove Wordpress on OCP inventory
+- name: Inventory | Remove Wordpress on OCP inventory
   tower_inventory:
     name: "Wordpress_OCP"
     description: "Wordpress on OCP Servers"
@@ -36,7 +36,7 @@
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
-- name: Remove Amazon Inventory
+- name: Inventory | Remove Amazon Inventory
   tower_inventory:
     name: 'AWS_Wordpress_Inventory'
     description: "Amazon Instances"

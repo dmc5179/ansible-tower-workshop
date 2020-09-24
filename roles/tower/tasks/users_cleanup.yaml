@@ -1,265 +1,37 @@
 ---
-- name: Remove helpdesk1 from the member role of Scanning Team
-  tower_role:
-    user: helpdesk1
-    target_team: "Scanning"
-    role: member
-    state: absent
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove helpdesk1 from the Infrastructure Inventory
-  tower_role:
-    user: helpdesk1
-    state: absent
-    role: use
-    inventory: "Infrastructure"
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove helpdesk1 from default org
-  tower_role:
-    user: helpdesk1
-    organization: '{{ tower.organization }}'
-    state: absent
-    role: member
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove helpdesk1 from {{ machine_credentials_name }} credentials
-  tower_role:
-    user: helpdesk1
-    credential: "{{ machine_credentials_name }}"
-    state: absent
-    role: use
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove helpdesk1 from Scanning job template
-  tower_role:
-    user: helpdesk1
-    job_template: "Scanning"
-    state: absent
-    role: execute
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove helpdesk1 from RHEL_STIGS project
-  tower_role:
-    user: helpdesk1
-    project: "RHEL_STIGS"
-    state: absent
-    role: use
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove engineer1 from the member role of Remediation Team
-  tower_role:
-    user: engineer1
-    target_team: "Remediation"
-    role: member
-    state: absent
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove engineer1 from the Infrastructure Inventory
-  tower_role:
-    user: engineer1
-    state: absent
-    role: use
-    inventory: "Infrastructure"
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove engineer1 from default org
-  tower_role:
-    user: engineer1
-    organization: '{{ tower.organization }}'
-    state: absent
-    role: member
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove engineer1 from {{ machine_credentials_name }} credentials
-  tower_role:
-    user: engineer1
-    credential: "{{ machine_credentials_name }}"
-    state: absent
-    role: use
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove engineer1 from Remediation job template
-  tower_role:
-    user: engineer1
-    job_template: "Remediation"
-    state: absent
-    role: execute
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove engineer1 from RHEL_STIGS  project
-  tower_role:
-    user: engineer1
-    project: "RHEL_STIGS"
-    state: absent
-    role: use
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove wordpress1 from the member role of Wordpress Team
-  tower_role:
-    user: wordpress1
-    target_team: "Wordpress"
-    role: member
-    state: absent
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-
-- name: Remove wordpress1 from the Infrastructure Inventory
-  tower_role:
-    user: wordpress1
-    state: absent
-    role: use
-    inventory: "Wordpress_RHEL"
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-  delegate_to: localhost
-
-- name: Remove wordpress1 from default org
-  tower_role:
-    user: wordpress1
-    organization: '{{ tower.organization }}'
-    state: absent
-    role: member
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-  delegate_to: localhost
-
-- name: Remove wordpress1 from {{ machine_credentials_name }} credentials
-  tower_role:
-    user: wordpress1
-    credential: "{{ machine_credentials_name }}"
-    state: absent
-    role: use
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-  delegate_to: localhost
-
-- name: Remove wordpress1 from wordpress inventory
-  tower_role:
-    user: wordpress1
-    inventory: "Wordpress_RHEL"
-    state: absent
-    role: use
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-  delegate_to: localhost
-
-- name: Remove wordpress1 from RHEL job template
-  tower_role:
-    user: wordpress1
-    job_template: "Wordpress_on_RHEL"
-    state: absent
-    role: execute
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-  delegate_to: localhost
-
-- name: Remove wordpress1 from Wordpress_RHEL project
-  tower_role:
-    user: wordpress1
-    project: "Wordpress_RHEL"
-    state: absent
-    role: use
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
-  delegate_to: localhost
 
 # Helpdesk user
 - name: Remove tower user helpdesk1
   tower_user:
-    username: helpdesk1
-    email: helpdesk1@example.org
+    username: 'helpdesk1'
+    email: 'helpdesk1@example.org'
     state: absent
-  ignore_errors: true
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
 # Engineer user
 - name: Remove tower user engineer1
   tower_user:
-    username: engineer1
-    email: engineer1@example.org
-    state: absent
-  ignore_errors: true
-  delegate_to: localhost
-
-# Wordpress user
-- name: Remove tower user wordpress1
-  tower_user:
-    username: wordpress1
-    email: wordpress1@example.org
+    username: 'engineer1'
+    email: 'engineer1@example.org'
     state: absent
     tower_host: '{{ tower.host }}'
     tower_username: '{{ tower.username }}'
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
-  ignore_errors: true
+  delegate_to: localhost
+
+# Wordpress user
+- name: Remove tower user wordpress1
+  tower_user:
+    username: 'wordpress1'
+    email: 'wordpress1@example.org'
+    state: absent
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost

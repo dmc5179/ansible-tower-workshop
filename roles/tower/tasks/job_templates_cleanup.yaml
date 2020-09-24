@@ -1,5 +1,5 @@
 ---
-- name: Create Scanning job template in tower
+- name: Templates | Cleanup Scanning job template in tower
   tower_job_template:
     name: "Scanning"
     job_type: "check"
@@ -13,7 +13,7 @@
   ignore_errors: true
   delegate_to: localhost
 
-- name: Create Remediation job template in tower
+- name: Templates | Cleanup Remediation job template in tower
   tower_job_template:
     name: "Remediation"
     job_type: "run"
@@ -27,7 +27,7 @@
   ignore_errors: true
   delegate_to: localhost
 
-- name: Create Wordpress on RHEL job template in tower
+- name: Templates | Cleanup Wordpress on RHEL job template in tower
   tower_job_template:
     name: "Wordpress_on_RHEL"
     job_type: "run"
@@ -41,7 +41,7 @@
   ignore_errors: true
   delegate_to: localhost
 
-- name: Create Wordpress on OCP job in tower
+- name: Templates | Cleanup Wordpress on OCP job in tower
   tower_job_template:
     name: "Wordpress_on_OCP"
     job_type: "run"

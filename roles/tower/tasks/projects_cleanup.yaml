@@ -1,5 +1,5 @@
 ---
-- name: Remove Tower Project for compliance scanning and remediation
+- name: Projects | Remove Tower Project for compliance scanning and remediation
   tower_project:
     name: "RHEL_STIGS"
     organization: "{{ tower.organization }}"
@@ -10,7 +10,7 @@
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
-- name: Remove Tower Project for Wordpress on RHEL
+- name: Projects | Remove Tower Project for Wordpress on RHEL
   tower_project:
     name: "Wordpress_RHEL"
     organization: "{{ tower.organization }}"
@@ -21,7 +21,7 @@
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
 
-- name: Remove Tower Project for Wordpress on OCP
+- name: Projects | Remove Tower Project for Wordpress on OCP
   tower_project:
     name: "Wordpress_OCP"
     organization: "{{ tower.organization }}"

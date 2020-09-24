@@ -29,7 +29,7 @@
       tags:
         - jobs_cleanup
 
-    - name: Tower| Cleanup Projects
+    - name: Tower | Cleanup Projects
       import_role:
         name: tower
         tasks_from: projects_cleanup.yaml
@@ -56,3 +56,10 @@
         tasks_from: teams_cleanup.yaml
       tags:
         - teams_cleanup
+
+    - name: Tower | Cleanup Users
+      import_role:
+        name: tower
+        tasks_from: users_cleanup.yaml
+      tags:
+        - users_cleanup

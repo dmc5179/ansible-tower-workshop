@@ -1,7 +1,7 @@
 ---
 - name: Create the Scanning tower team
   tower_team:
-    name: Scanning
+    name: '{{ item }}'
     organization: '{{ tower.organization }}'
     state: absent
     tower_host: '{{ tower.host }}'
@@ -9,25 +9,29 @@
     tower_password: '{{ tower.password }}'
     tower_verify_ssl: '{{ tower.verify_ssl }}'
   delegate_to: localhost
+  with_items:
+    - 'Scanning'
+    - 'Remediation'
+    - 'Wordpress'
 
-- name: Create Remediation tower team
-  tower_team:
-    name: Remediation
-    organization: '{{ tower.organization }}'
-    state: absent
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  delegate_to: localhost
+#- name: Create Remediation tower team
+#  tower_team:
+#    name: Remediation
+#    organization: '{{ tower.organization }}'
+#    state: absent
+#    tower_host: '{{ tower.host }}'
+#    tower_username: '{{ tower.username }}'
+#    tower_password: '{{ tower.password }}'
+#    tower_verify_ssl: '{{ tower.verify_ssl }}'
+#  delegate_to: localhost
 
-- name: Create Wordpress team
-  tower_team:
-    name: Wordpress
-    organization: '{{ tower.organization }}'
-    state: absent
-    tower_host: '{{ tower.host }}'
-    tower_username: '{{ tower.username }}'
-    tower_password: '{{ tower.password }}'
-    tower_verify_ssl: '{{ tower.verify_ssl }}'
-  delegate_to: localhost
+#- name: Create Wordpress team
+#  tower_team:
+#    name: Wordpress
+#    organization: '{{ tower.organization }}'
+#    state: absent
+#    tower_host: '{{ tower.host }}'
+#    tower_username: '{{ tower.username }}'
+#    tower_password: '{{ tower.password }}'
+#    tower_verify_ssl: '{{ tower.verify_ssl }}'
+#  delegate_to: localhost
