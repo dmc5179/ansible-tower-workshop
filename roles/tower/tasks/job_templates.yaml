@@ -109,5 +109,6 @@
     survey_enabled: true
     survey_spec: "{{ lookup('template', 'ocp_survey.json.j2') }}"
     become_enabled: true
+    webhook_service: 'github'
     description: "Job to install Wordpress on OpenShift"
   delegate_to: localhost

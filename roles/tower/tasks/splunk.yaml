@@ -8,5 +8,6 @@
     method: PUT
     body: "{{ lookup('template','tower_logging.json.j2') }}"
     force_basic_auth: yes
-    status_code: 201
+    validate_certs: false
+    status_code: 200
     body_format: json

@@ -47,6 +47,13 @@
       tags:
         - users
 
+    - name: Tower | Configure log forwarding to splunk
+      import_role:
+        name: tower
+        tasks_from: splunk.yaml
+      tags:
+        - splunk
+
     # TODO: Not supported yet
     #- name: Tower | Create OAuth Applications
     #  import_role:

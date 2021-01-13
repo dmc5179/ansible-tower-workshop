@@ -15,7 +15,7 @@
 - name: Add host to Infrastructure inventory
   delegate_to: localhost
   tower_host:
-    name: grimlock-wordpress.redhatgov.io
+    name: wordpress.dan.rhnaps.io
     description: "Local Host Group"
     inventory: "Infrastructure"
     state: present
@@ -41,7 +41,7 @@
 
 - name: Add host to Wordpress on RHEL inventory
   tower_host:
-    name: grimlock-wordpress.redhatgov.io
+    name: wordpress.dan.rhnaps.io
     description: "Wordpress RHEL Server"
     inventory: "Wordpress_RHEL"
     state: present

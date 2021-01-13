@@ -1,10 +1,14 @@
 ---
-- hosts: localhost
-  connection: local
+- hosts: splunk
   become: false
-  gather_facts: false
+  gather_facts: true
   tasks:
 
-    - name: Configure Splunk Logging Aggregator
-      include_tasks: playbooks/splunk.yaml
-      when: ( splunk.enabled | bool )
+    - name: Splunk | Install Splunk RPM
+      import_role:
+        name: splunk
+        tasks_from: install.yaml
+
+#    - name: Splunk | Configure Logging Aggregator
+#      import_role: playbooks/splunk.yaml
+#      when: ( splunk.enabled | bool )
