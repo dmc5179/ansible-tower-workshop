@@ -33,7 +33,7 @@ Below is a description of each of the fileds in the tower_cli.cfg file. Addition
 https://tower-cli.readthedocs.io/en/latest/api_ref/conf.html
 
 | Variable       | Default               | Comments                                                                                                          |
-| :---	         |                       |                                                                                                                   |
+| :---	         | :--                   | :--                                                                                                               |
 | color          | Boolean/’true’        | Whether to use colored output for highlighting or not.                                                            |
 | format         | String with options (‘human’, ‘json’, ‘yaml’)/’human’ | Output format.                                                                    |
 | host           | String/‘127.0.0.1’    | The location of the Ansible Tower host. HTTPS is assumed as the protocol unless “http://” is explicitly provided. |
@@ -43,7 +43,6 @@ https://tower-cli.readthedocs.io/en/latest/api_ref/conf.html
 | verbose        | Boolean/’false’       | Whether to show information about requests being made.                                                            |
 | description_on | Boolean/’false’       | Whether to show description in human-formatted output. [CLI use only]                                             |
 | certificate    | String/’‘             | Path to a custom certificate file that will be used throughout the command.                                       |
-                                           Ignored if –insecure flag if set in command or verify_ssl is set to false
 | use_token      | Boolean/’false’       | Whether to use token-based authentication. No longer supported in Tower 3.3 and above                             |
 
 - To provision all of the pieces of the project simply run the main.yaml playbook
@@ -68,3 +67,10 @@ ansible-playbook --tags 'credentials,teams' main.yaml
 ## Cleanup
 
 - The cleanup.yaml playbook is not yet supported. All tasks in that playbook have been commented out.
+
+
+## Splunk search strings:
+
+```
+source="http:tower" (index="history")| spath stdout | search stdout="*new_incident.record*"
+```
