@@ -1,2 +1,9 @@
 ---
 
+- name: Drop custom script onto splunk server
+  template:
+    src: tower_remediation.sh.j2
+    dest: /opt/splunk/bin/scripts/tower_remediation.sh
+    owner: splunk
+    group: splunk
+    mode: 0755
