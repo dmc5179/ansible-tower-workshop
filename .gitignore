@@ -6,3 +6,4 @@ ansible.log
 group_vars/all/all.yaml
 group_vars/all/snow.yaml
 group_vars/all/splunk.yaml
+certs/*
