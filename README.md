@@ -45,7 +45,7 @@ cp group_vars/all/all.yaml.example group_vars/all/all.yaml
 | tower.verbose               | false                     |                                 |
 | tower.color                 | true                      |                                 |
 | tower.username              | 'admin'                   |                                 |
-| tower.host                  | 'tower.example.rhnaps.io' |                                 |
+| tower.host                  | 'tower.example.redhatgov.io' |                                 |
 | tower.organization          | 'Default'                 |                                 |
 | tower.certificate           |                           |                                 |
 
