@@ -1,6 +1,6 @@
 ---
 - name: Add Tower Project for compliance scanning and remediation
-  tower_project:
+  ansible.tower.tower_project:
     name: "RHEL_STIGS"
     description: "Compliance Remediation Project"
     organization: "{{ tower.organization }}"
@@ -16,7 +16,7 @@
   delegate_to: localhost
 
 - name: Add Tower Project for Wordpress on RHEL
-  tower_project:
+  ansible.tower.tower_project:
     name: "Wordpress_RHEL"
     description: "Wordpress on RHEL Project"
     organization: "{{ tower.organization }}"
@@ -32,7 +32,7 @@
   delegate_to: localhost
 
 - name: Add Tower Project for Wordpress on OCP
-  tower_project:
+  ansible.tower.tower_project:
     name: "Wordpress_OCP"
     description: "Wordpress on OCP Project"
     organization: "{{ tower.organization }}"

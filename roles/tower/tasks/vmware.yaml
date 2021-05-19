@@ -1,7 +1,7 @@
 ---
 
 - name: VCenter Credentials
-  tower_credential:
+  ansible.tower.tower_credential:
     name: vcenter_credentials
     description: 'Credentials for VCenter Server API'
     kind: vmware
@@ -16,7 +16,7 @@
   delegate_to: localhost
 
 - name: Add VCenter Inventory
-  tower_inventory:
+  ansible.tower.tower_inventory:
     name: 'VMWare_Dynamic'
     description: "VMWare Instances"
     organization: "{{ tower.organization }}"
@@ -31,18 +31,17 @@
 
 - name: Add VMWare inventory source
   delegate_to: localhost
-    tower_inventory_source:
-      name: VMWare
-      description: Hosts from VMWare
-      inventory: 'VMWare_Dynamic'
-      credential: vcenter_credentials
-      source: vmware
-      source_vars: "{ private: false }"
-      update_on_launch: true
-      overwrite: true
-      state: present
-      tower_host: '{{ tower.host }}'
-      tower_username: '{{ tower.username }}'
-      tower_password: '{{ tower.password }}'
-      tower_verify_ssl: '{{ tower.verify_ssl }}'
-
+  ansible.tower.tower_inventory_source:
+    name: VMWare
+    description: Hosts from VMWare
+    inventory: 'VMWare_Dynamic'
+    credential: vcenter_credentials
+    source: vmware
+    source_vars: "{ private: false }"
+    update_on_launch: true
+    overwrite: true
+    state: present
+    tower_host: '{{ tower.host }}'
+    tower_username: '{{ tower.username }}'
+    tower_password: '{{ tower.password }}'
+    tower_verify_ssl: '{{ tower.verify_ssl }}'

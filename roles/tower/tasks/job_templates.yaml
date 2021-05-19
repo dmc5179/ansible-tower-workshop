@@ -1,6 +1,6 @@
 ---
 - name: Create Scanning job template in tower
-  tower_job_template:
+  ansible.tower.tower_job_template:
     name: "Scanning"
     job_type: "check"
     inventory: "Infrastructure"
@@ -19,7 +19,7 @@
   delegate_to: localhost
 
 - name: Create Dynamic Scanning job template with EC2 source in tower
-  tower_job_template:
+  ansible.tower.tower_job_template:
     name: "Scanning_Dynamic"
     job_type: "check"
     inventory: "AWS_Dynamic"
@@ -39,7 +39,7 @@
   when: ( aws_dynamic_inventory | bool )
 
 - name: Create Dynamic Scanning job template with Satellite source in tower
-  tower_job_template:
+  ansible.tower.tower_job_template:
     name: "Scanning_Dynamic_Satellite"
     job_type: "check"
     inventory: "Satellite_Dynamic"
@@ -59,7 +59,7 @@
   when: ( satellite_dynamic_inventory | bool )
 
 - name: Create Remediation job template in tower
-  tower_job_template:
+  ansible.tower.tower_job_template:
     name: "Remediation"
     job_type: "run"
     inventory: "Infrastructure"
@@ -77,7 +77,7 @@
   delegate_to: localhost
 
 - name: Create Wordpress on RHEL job template in tower
-  tower_job_template:
+  ansible.tower.tower_job_template:
     name: "Wordpress_on_RHEL"
     job_type: "run"
     inventory: "Wordpress_RHEL"
@@ -95,7 +95,7 @@
   delegate_to: localhost
 
 - name: Create Wordpress on OCP job in tower
-  tower_job_template:
+  ansible.tower.tower_job_template:
     name: "Wordpress_on_OCP"
     job_type: "run"
     inventory: "Infrastructure"

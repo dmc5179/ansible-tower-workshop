@@ -2,7 +2,7 @@
 
 - name: Check for existing ServiceNow OAuth Application
   delegate_to: localhost
-  shell:
+  ansible.builtin.shell:
     cmd: |
       tower-cli application list --tower-password '{{ tower.password }}' \
                 --tower-username '{{ tower.username }}' \
@@ -16,7 +16,7 @@
 
 - name: Create OAuth Application for ServiceNow
   delegate_to: localhost
-  shell:
+  ansible.builtin.shell:
     cmd: |
       tower-cli application create --tower-password '{{ tower.password }}' --tower-username '{{ tower.username }}' \
                 --tower-host '{{ tower.host }}' --insecure --format json \
@@ -32,7 +32,7 @@
 
 - name: Allow External Users to Create OAuth2 Tokens
   delegate_to: localhost
-  shell:
+  ansible.builtin.shell:
     cmd: |
       tower-cli setting modify --tower-password '{{ tower.password }}' \
                 --tower-username '{{ tower.username }}' \

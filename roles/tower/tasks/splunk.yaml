@@ -1,7 +1,7 @@
 ---
 
 - name: Configure Splunk Logging Aggregator
-  uri:
+  ansible.builtin.uri:
     url: 'https://{{ tower.host }}/api/v2/settings/logging/'
     user: '{{ tower.username }}'
     password: '{{ tower.password }}'

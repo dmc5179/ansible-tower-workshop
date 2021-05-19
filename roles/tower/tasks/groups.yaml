@@ -1,6 +1,6 @@
 ---
 - name: Add tower group
-  tower_group:
+  ansible.tower.tower_group:
     name: localhost
     description: "Local Host Group"
     inventory: "Local Inventory"

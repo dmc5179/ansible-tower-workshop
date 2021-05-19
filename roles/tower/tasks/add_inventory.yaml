@@ -1,7 +1,7 @@
 ---
 
 - name: Add Infrastructure tower inventory
-  tower_inventory:
+  ansible.tower.tower_inventory:
     name: "Infrastructure"
     description: "Infrastructure Servers"
     organization: "{{ tower.organization }}"
@@ -14,7 +14,7 @@
 
 - name: Add host to Infrastructure inventory
   delegate_to: localhost
-  tower_host:
+  ansible.tower.tower_host:
     name: wordpress.dan.redhatgov.io
     description: "Local Host Group"
     inventory: "Infrastructure"
@@ -28,7 +28,7 @@
     tower_verify_ssl: '{{ tower.verify_ssl }}'
 
 - name: Add Wordpress on RHEL inventory
-  tower_inventory:
+  ansible.tower.tower_inventory:
     name: "Wordpress_RHEL"
     description: "Wordpress RHEL Servers"
     organization: "{{ tower.organization }}"
@@ -40,7 +40,7 @@
   delegate_to: localhost
 
 - name: Add host to Wordpress on RHEL inventory
-  tower_host:
+  ansible.tower.tower_host:
     name: wordpress.dan.redhatgov.io
     description: "Wordpress RHEL Server"
     inventory: "Wordpress_RHEL"
@@ -53,7 +53,7 @@
 
 - name: Add Wordpress on OCP inventory
   delegate_to: localhost
-  tower_inventory:
+  ansible.tower.tower_inventory:
     name: "Wordpress_OCP"
     description: "Wordpress on OCP Servers"
     organization: "{{ tower.organization }}"
@@ -65,7 +65,7 @@
 
 - name: Add Amazon Inventory
   delegate_to: localhost
-  tower_inventory:
+  ansible.tower.tower_inventory:
     name: 'AWS_Dynamic'
     description: "Amazon Instances"
     organization: "{{ tower.organization }}"
@@ -81,15 +81,18 @@
 
 - name: Add ec2 inventory source
   delegate_to: localhost
-  tower_inventory_source:
+  ansible.tower.tower_inventory_source:
     name: AWS
     description: Hosts from AWS
     source: ec2
-    credential: amz
+    # Credentials are not required if using IAM role attached to the Tower Server
+    #credential: amz
     inventory: 'AWS_Dynamic'
-    instance_filters: 'tag:Name=grimlock-wordpress'
-    source_regions: 'us-east-1'
-    source_vars: "{ ansible_user: ec2-user, ansible_python_interpreter: /usr/bin/python3 }"
+    host_filter: 'tag:Name=grimlock-wordpress'
+    #source_regions: 'us-east-1'
+    source_vars: 
+      ansible_user: "ec2-user"
+      ansible_python_interpreter: "/usr/bin/python3"
     update_on_launch: true
     overwrite: true
     state: present
@@ -100,7 +103,7 @@
   when: ( aws_dynamic_inventory | bool )
 
 - name: Add Satellite Inventory
-  tower_inventory:
+  ansible.tower.tower_inventory:
     name: 'Satellite_Dynamic'
     description: "Instances registered with Satellite"
     organization: "{{ tower.organization }}"
@@ -116,7 +119,7 @@
 
 - name: Add Satellite inventory source
   delegate_to: localhost
-  tower_inventory_source:
+  ansible.tower.tower_inventory_source:
     name: Satellite
     description: Hosts from Satellite
     inventory: 'Satellite_Dynamic'

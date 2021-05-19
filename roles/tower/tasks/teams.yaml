@@ -1,6 +1,6 @@
 ---
 - name: Create the Scanning tower team
-  tower_team:
+  ansible.tower.tower_team:
     name: Scanning
     description: Team for scanning devices for compliance
     organization: '{{ tower.organization }}'
@@ -12,7 +12,7 @@
   delegate_to: localhost
 
 - name: Create Remediation tower team
-  tower_team:
+  ansible.tower.tower_team:
     name: Remediation
     description: Team for remediating devices for compliance
     organization: '{{ tower.organization }}'
@@ -24,7 +24,7 @@
   delegate_to: localhost
 
 - name: Create Wordpress team
-  tower_team:
+  ansible.tower.tower_team:
     name: Wordpress
     description: Team for installing Wordpress
     organization: '{{ tower.organization }}'

@@ -1,7 +1,7 @@
 ---
 # Helpdesk user
 - name: Add tower user helpdesk1
-  tower_user:
+  ansible.tower.tower_user:
     username: helpdesk1
     password: redhat1
     email: helpdesk1@example.org
@@ -15,7 +15,7 @@
   delegate_to: localhost
 
 - name: Add helpdesk1 to the member role of Scanning Team
-  tower_role:
+  ansible.tower.tower_role:
     user: helpdesk1
     target_team: "Scanning"
     role: member
@@ -27,7 +27,7 @@
   delegate_to: localhost
 
 - name: Add helpdesk1 to the Infrastructure Inventory
-  tower_role:
+  ansible.tower.tower_role:
     user: helpdesk1
     state: present
     role: use
@@ -39,7 +39,7 @@
   delegate_to: localhost
 
 - name: Add helpdesk1 to default org
-  tower_role:
+  ansible.tower.tower_role:
     user: helpdesk1
     organization: '{{ tower.organization }}'
     state: present
@@ -51,7 +51,7 @@
   delegate_to: localhost
 
 - name: Add helpdesk1 to {{ machine_credentials_name }} credentials
-  tower_role:
+  ansible.tower.tower_role:
     user: helpdesk1
     credential: "{{ machine_credentials_name }}"
     state: present
@@ -63,7 +63,7 @@
   delegate_to: localhost
 
 - name: Add helpdesk1 to Scanning job template
-  tower_role:
+  ansible.tower.tower_role:
     user: helpdesk1
     job_template: "Scanning"
     state: present
@@ -75,7 +75,7 @@
   delegate_to: localhost
 
 - name: Add helpdesk1 to AWS Dynamic Scanning job template
-  tower_role:
+  ansible.tower.tower_role:
     user: helpdesk1
     job_template: "Scanning_Dynamic"
     state: present
@@ -88,7 +88,7 @@
   when: ( aws_dynamic_inventory | bool )
 
 - name: Add helpdesk1 to Satellite Dynamic Scanning job template
-  tower_role:
+  ansible.tower.tower_role:
     user: helpdesk1
     job_template: "Scanning_Dynamic_Satellite"
     state: present
@@ -101,7 +101,7 @@
   when: ( satellite_dynamic_inventory | bool )
 
 - name: Add helpdesk1 to RHEL_STIGS project
-  tower_role:
+  ansible.tower.tower_role:
     user: helpdesk1
     project: "RHEL_STIGS"
     state: present
@@ -114,7 +114,7 @@
 
 # Engineer user
 - name: Add tower user engineer1
-  tower_user:
+  ansible.tower.tower_user:
     username: engineer1
     password: redhat1
     email: 'engineer1@example.org'
@@ -128,7 +128,7 @@
   delegate_to: localhost
 
 - name: Add engineer1 to the member role of Remediation Team
-  tower_role:
+  ansible.tower.tower_role:
     user: engineer1
     target_team: "Remediation"
     role: member
@@ -140,7 +140,7 @@
   delegate_to: localhost
 
 - name: Add engineer1 to the member role of Scanning Team
-  tower_role:
+  ansible.tower.tower_role:
     user: engineer1
     target_team: "Scanning"
     role: member
@@ -152,7 +152,7 @@
   delegate_to: localhost
 
 - name: Add engineer1 to the Infrastructure Inventory
-  tower_role:
+  ansible.tower.tower_role:
     user: engineer1
     state: present
     role: use
@@ -164,7 +164,7 @@
   delegate_to: localhost
 
 - name: Add engineer1 to default org
-  tower_role:
+  ansible.tower.tower_role:
     user: engineer1
     organization: '{{ tower.organization }}'
     state: present
@@ -176,7 +176,7 @@
   delegate_to: localhost
 
 - name: Add engineer1 to {{ machine_credentials_name }} credentials
-  tower_role:
+  ansible.tower.tower_role:
     user: engineer1
     credential: "{{ machine_credentials_name }}"
     state: present
@@ -188,7 +188,7 @@
   delegate_to: localhost
 
 - name: Add engineer1 to Remediation job template
-  tower_role:
+  ansible.tower.tower_role:
     user: engineer1
     job_template: "Remediation"
     state: present
@@ -200,7 +200,7 @@
   delegate_to: localhost
 
 - name: Add engineer1 to Scanning job template
-  tower_role:
+  ansible.tower.tower_role:
     user: engineer1
     job_template: "Scanning"
     state: present
@@ -212,7 +212,7 @@
   delegate_to: localhost
 
 - name: Add engineer1 to Scanning job template
-  tower_role:
+  ansible.tower.tower_role:
     user: engineer1
     job_template: "Scanning_Dynamic"
     state: present
@@ -225,7 +225,7 @@
   when: ( aws_dynamic_inventory | bool )
 
 - name: Add engineer1 to Scanning job template
-  tower_role:
+  ansible.tower.tower_role:
     user: engineer1
     job_template: "Scanning_Dynamic_Satellite"
     state: present
@@ -238,7 +238,7 @@
   when: ( satellite_dynamic_inventory | bool )
 
 - name: Add engineer1 to RHEL_STIGS  project
-  tower_role:
+  ansible.tower.tower_role:
     user: engineer1
     project: "RHEL_STIGS"
     state: present
@@ -251,7 +251,7 @@
 
 # Wordpress user
 - name: Add tower user wordpress1
-  tower_user:
+  ansible.tower.tower_user:
     username: wordpress1
     password: redhat1
     email: wordpress1@example.org
@@ -265,7 +265,7 @@
   delegate_to: localhost
 
 - name: Add wordpress1 to the member role of Wordpress Team
-  tower_role:
+  ansible.tower.tower_role:
     user: wordpress1
     target_team: "Wordpress"
     role: member
@@ -277,7 +277,7 @@
   delegate_to: localhost
 
 - name: Add wordpress1 to default org
-  tower_role:
+  ansible.tower.tower_role:
     user: wordpress1
     organization: '{{ tower.organization }}'
     state: present
@@ -290,7 +290,7 @@
 
 - name: Add all users to {{ machine_credentials_name }} credentials
   delegate_to: localhost
-  tower_role:
+  ansible.tower.tower_role:
     user: '{{ item }}'
     credential: "{{ machine_credentials_name }}"
     state: present
@@ -306,7 +306,7 @@
 
 - name: Add all users to amz credentials
   delegate_to: localhost
-  tower_role:
+  ansible.tower.tower_role:
     user: '{{ item }}'
     credential: "amz"
     state: present
@@ -323,7 +323,7 @@
 
 - name: Add all users to satellite credentials
   delegate_to: localhost
-  tower_role:
+  ansible.tower.tower_role:
     user: '{{ item }}'
     credential: "satellite_credential"
     state: present
@@ -339,7 +339,7 @@
     - 'wordpress1'
 
 - name: Add wordpress1 to wordpress RHEL inventory
-  tower_role:
+  ansible.tower.tower_role:
     user: wordpress1
     inventory: "Wordpress_RHEL"
     state: present
@@ -351,7 +351,7 @@
   delegate_to: localhost
 
 - name: Add wordpress1 to wordpress OCP inventory
-  tower_role:
+  ansible.tower.tower_role:
     user: wordpress1
     inventory: "Wordpress_OCP"
     state: present
@@ -364,7 +364,7 @@
 
 - name: Add all users to AWS_Dynamic Inventory
   delegate_to: localhost
-  tower_role:
+  ansible.tower.tower_role:
     user: '{{ item }}'
     inventory: "AWS_Dynamic"
     state: present
@@ -381,7 +381,7 @@
 
 - name: Add all user to Satellite_Dynamic Inventory
   delegate_to: localhost
-  tower_role:
+  ansible.tower.tower_role:
     user: '{{ item }}'
     inventory: "Satellite_Dynamic"
     state: present
@@ -397,7 +397,7 @@
     - 'wordpress1'
 
 - name: Add wordpress1 to RHEL job template
-  tower_role:
+  ansible.tower.tower_role:
     user: wordpress1
     job_template: "Wordpress_on_RHEL"
     state: present
@@ -409,7 +409,7 @@
   delegate_to: localhost
 
 - name: Add wordpress1 to OCP job template
-  tower_role:
+  ansible.tower.tower_role:
     user: wordpress1
     job_template: "Wordpress_on_OCP"
     state: present
@@ -421,7 +421,7 @@
   delegate_to: localhost
 
 - name: Add wordpress1 to Wordpress_RHEL project
-  tower_role:
+  ansible.tower.tower_role:
     user: wordpress1
     project: "Wordpress_RHEL"
     state: present
@@ -433,7 +433,7 @@
   delegate_to: localhost
 
 - name: Add wordpress1 to Wordpress_OCP project
-  tower_role:
+  ansible.tower.tower_role:
     user: wordpress1
     project: "Wordpress_OCP"
     state: present
