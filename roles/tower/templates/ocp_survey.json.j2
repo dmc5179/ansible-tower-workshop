@@ -13,6 +13,42 @@
       "default": "",
       "choices": "",
       "new_question": true
+    },
+    {
+      "question_name": "OpenShift User",
+      "question_description": "OpenShift Username",
+      "required": true,
+      "type": "text",
+      "variable": "k8s_user",
+      "min": 0,
+      "max": 32,
+      "default": "kubeadmin",
+      "choices": "",
+      "new_question": true
+    },
+    {
+      "question_name": "OpenShift Cluster Name",
+      "question_description": "OpenShift Cluster Name",
+      "required": true,
+      "type": "text",
+      "variable": "cluster_name",
+      "min": 0,
+      "max": 32,
+      "default": "ocp4",
+      "choices": "",
+      "new_question": true
+    },
+    {
+      "question_name": "OpenShift Cluster Base Domain",
+      "question_description": "OpenShift Cluster Base Domain",
+      "required": true,
+      "type": "text",
+      "variable": "cluster_domain",
+      "min": 0,
+      "max": 32,
+      "default": "dan.redhatgov.io",
+      "choices": "",
+      "new_question": true
     }
   ]
 }
