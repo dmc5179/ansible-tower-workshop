@@ -1,5 +1,8 @@
 ---
 
+##########################################################
+# Tower variables
+##########################################################
 tower:
   use_token: False
   description_on: False
@@ -16,6 +19,38 @@ tower:
 
 host_credentials: 'path to ssh_public_key_file'
 
+##########################################################
+# Satellite Variables
+##########################################################
+
 satellite_server: 'https://satellite.example.com'
 satellite_username: 'username'
 satellite_password: 'password'
+
+##########################################################
+# Tower variables
+##########################################################
+
+# snow_record variables
+# These come from setting up a dev instance with Service Now Online
+sn_username: 'admin'
+sn_password: 'PASSWORD'
+sn_instance: 'dev#####'
+
+# data variables
+
+sn_severity: 2
+sn_priority: 2
+
+##########################################################
+# Splunk Variables
+##########################################################
+
+splunk:
+  enabled: true
+  host: splunk.example.com
+  hec:
+    enabled: true
+    ssl: false
+    token: aaa-bbb-ccc-ddd-eee-fff
+    port: 8088
