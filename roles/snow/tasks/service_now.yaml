@@ -12,12 +12,12 @@
     snow_record:
       state: present
       table: change_request
-      username: "{{ sn_username }}"
-      password: "{{ sn_password }}"
-      instance: "{{ sn_instance }}"
+      username: "{{ snow.username }}"
+      password: "{{ snow.password }}"
+      instance: "{{ snow.instance }}"
       data:
-        severity: "{{ sn_severity }}"
-        priority: "{{ sn_priority }}"
+        severity: "{{ snow.severity }}"
+        priority: "{{ snow.priority }}"
         short_description: "This is a test opened by Ansible"
     register: new_incident
 
