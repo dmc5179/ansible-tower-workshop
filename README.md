@@ -30,24 +30,38 @@ cp group_vars/all/all.yaml.example group_vars/all/all.yaml
 - Edit your copy for the all.yaml file
 
 
-| Variable                    | Default                   | Comments                        |
-| :---	                      | :--                       | :--                             |
-| demo_name                   | 'tower'                   |                                 |
-| aws_dynamic_inventory       | true                      |                                 |
-| satellite_dynamic_inventory | false                     |                                 |
-| tower.use_token             | false                     |                                 |
-| tower.description_on        | false                     |                                 |
-| tower.password              | 'redhat2020'              |                                 |
-| tower.verify_ssl            | false                     |                                 |
-| tower.format                | 'human'                   |                                 |
-| tower.insecure              | true                      |                                 |
-| tower.oauth_token           |                           |                                 |
-| tower.verbose               | false                     |                                 |
-| tower.color                 | true                      |                                 |
-| tower.username              | 'admin'                   |                                 |
-| tower.host                  | 'tower.example.redhatgov.io' |                                 |
-| tower.organization          | 'Default'                 |                                 |
-| tower.certificate           |                           |                                 |
+| Variable                    | Default                         | Comments                  |
+| :---	                      | :--                             | :--                       |
+| demo_name                   | 'tower'                         |                           |
+| aws_dynamic_inventory       | true                            |                           |
+| satellite_dynamic_inventory | false                           |                           |
+| tower.use_token             | false                           |                           |
+| tower.description_on        | false                           |                           |
+| tower.password              | 'redhat2020'                    |                           |
+| tower.verify_ssl            | false                           |                           |
+| tower.format                | 'human'                         |                           |
+| tower.insecure              | true                            |                           |
+| tower.oauth_token           |                                 |                           |
+| tower.verbose               | false                           |                           |
+| tower.color                 | true                            |                           |
+| tower.username              | 'admin'                         |                           |
+| tower.host                  | 'tower.example.redhatgov.io'    |                           |
+| tower.organization          | 'Default'                       |                           |
+| tower.certificate           |                                 |                           |
+| satellite.server            | 'https://satellite.example.com' |                           |
+| satellite.username          | 'username'                      |                           |
+| satellite.password          | 'password'                      |                           |
+| snow.username               | 'admin'                         |                           |
+| snow.password               | 'PASSWORD'                      |                           |
+| snow.instance               | 'dev#####'                      |                           |
+| snow.severity               | 2                               |                           |
+| snow. priority              | 2                               |                           |
+| splunk.enabled              | true                            |                           |
+| splunk.host                 | splunk.example.com              |                           |
+| splunk.hec.enabled          | true                            |                           |
+| splunk.hec.ssl              | false                           |                           |
+| splunk.hec.token            | aaa-bbb-ccc-ddd-eee-fff         |                           |
+| splunk.hec.port             | 8088                            |                           |
 
 
 
